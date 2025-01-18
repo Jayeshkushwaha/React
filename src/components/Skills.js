@@ -1,20 +1,32 @@
 import React from 'react';
+import '../styles/Skills.css';
 
 const Skills = () => {
+  const skills = [
+    "React Native",
+    "JavaScript",
+    "TypeScript",
+    "Redux",
+    "REST APIs",
+    "GitHub",
+    "GitLab",
+    "CI/CD",
+    "User Interface Design"
+  ];
+
   return (
-    <div id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>React Native</li>
-        <li>TypeScript</li>
-        <li>JavaScript</li>
-        <li>Redux</li>
-        <li>REST APIs</li>
-        <li>Git</li>
-        <li>CI/CD</li>
-        <li>SonarQube</li>
-      </ul>
-    </div>
+    <section className="skills">
+      <div className="container">
+        <h2>Skills</h2>
+        <div className="skills-container">
+          {skills.map((skill, index) => (
+            <span key={index} className="skill-tag">
+              {skill}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 

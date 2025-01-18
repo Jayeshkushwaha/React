@@ -1,0 +1,30 @@
+.footer {
+    background-color: #1f2937;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .header h1 {
+      font-size: 2rem;
+    }
+  
+    .header h2 {
+      font-size: 1.25rem;
+    }
+  
+    .contact-links {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .container {
+      padding: 0 1rem;
+    }
+  
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
