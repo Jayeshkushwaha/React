@@ -15,7 +15,7 @@ const Projects = () => {
       name: "MYNE",
       description: "Financial platform that enhances well-being by helping users track, manage, and safeguard assets. Integrates bank accounts, cryptocurrency wallets, and stock exchanges for real-time net worth tracking. Includes estate planning features and access to wealth planners.",
       period: "October 2024 - November 2024",
-      link: "apps.apple.com/in/app/myne-track-your-wealth/id6651839016"
+      link: "www.joinmyne.com/"
     },
     {
       name: "Secure2Go",
