@@ -14,7 +14,7 @@ const Header = () => {
         <h1 className="animate-slide-in">Jayesh Kushwaha</h1>
         <h2 className="animate-slide-in">React Native Developer</h2>
         <p className="tagline animate-slide-in">
-          Building robust, scalable, and user-friendly mobile apps with React Native.
+          Building user-friendly mobile apps with React Native.
         </p>
         <div className="contact-links animate-slide-up">
           <a href="mailto:jayesh.kushwaha25@gmail.com" className="contact-link">
