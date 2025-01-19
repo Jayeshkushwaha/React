@@ -8,7 +8,7 @@ const Projects = () => {
     {
       name: "Xtraplayer",
       description: "A Live Scoring mobile application designed to simplify cricket score management in real-time. Features intuitive interface for scoring, including options for runs, extras (WD, NB, BYE, LB), and quick undo actions. Implements WebSocket for real-time score updates.",
-      period: "December 2024 - Present",
+      period: "December 2024 - January 2024",
       link: "www.xtraplayer.com/"
     },
     {
@@ -24,13 +24,13 @@ const Projects = () => {
       link: "play.google.com/store/apps/details?id=nl.secure2go.addressregapp"
     },
     {
-      name: "Yelowsoft User App",
+      name: "Yelowsoft",
       description: "Comprehensive app combining car booking and food delivery services. Provides real-time ride updates and seamless food ordering experience with wide cuisine options. Features include live tracking and convenient payment processing.",
       period: "February 2023 - May 2024",
       link: "play.google.com/store/apps/details?id=com.yelowsoft.user"
     },
     {
-      name: "Yelowsoft Driver App",
+      name: "Yelowsoft Driver",
       description: "Ride-hailing driver platform with streamlined passenger communication, accurate navigation, and seamless payment processing. Includes tools for earnings maximization and service optimization.",
       period: "February 2023 - May 2024",
       link: "play.google.com/store/apps/details?id=com.yelowsoft.driver"

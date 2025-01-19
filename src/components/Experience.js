@@ -7,7 +7,7 @@ const Experience = () => {
     {
       role: "Associate Software Developer",
       company: "Elsner Technologies Pvt. Ltd.",
-      period: "July 2024 - Present",
+      period: "July 2024 - January 2024",
       location: "Builder.ai",
       responsibilities: [
         "Creating dynamic and scalable mobile applications using React Native",
