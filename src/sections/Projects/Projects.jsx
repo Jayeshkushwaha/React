@@ -14,7 +14,7 @@ function Projects() {
       <h1 className="sectionTitle">Projects</h1>
       <div className={styles.projectsContainer}>
         <ProjectCard
-          src={viberr}
+          src="https://lh3.googleusercontent.com/p/AF1QipNBig04ToOihS0_FaT8_FxVwczskkFxx7Ik6ujP=s1360-w1360-h1020"
           link="https://www.xtraplayer.com/"
           h3="Xtraplayer"
           p="Cricket Scoring"
@@ -50,7 +50,7 @@ function Projects() {
           p="Point of Sale"
         />
         <ProjectCard
-          src={poleasy_logo}
+          src="https://www.mypoleasy.com/wp-content/uploads/2023/05/Logo.svg"
           link="https://www.mypoleasy.com/get-started/policyholders-first-time-buyers/"
           h3="PolEasy"
           p="Insurance"
