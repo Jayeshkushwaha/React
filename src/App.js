@@ -1,23 +1,18 @@
-import React from 'react';
-import './styles/App.css';
-import Header from './components/Header';
-import About from './components/About';
-import Projects from './components/Projects';
-import Experience from './components/Experience';
-import Skills from './components/Skills';
-import Footer from './components/Footer';
+import './App.css';
+import Footer from './sections/Footer/Footer';
+import Hero from './sections/Hero/Hero';
+import Projects from './sections/Projects/Projects';
+import Skills from './sections/Skills/Skills';
 
-const App = () => {
+function App() {
   return (
-    <div className="app">
-      <Header /> 
-      <About />
+    <>
+      <Hero />
       <Projects />
-      <Experience />
       <Skills />
       <Footer />
-    </div>
+    </>
   );
-};
+}
 
 export default App;
