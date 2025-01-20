@@ -20,7 +20,7 @@ function Hero() {
     <section id="hero" className={styles.container}>
       <div className={styles.colorModeContainer}>
         <img
-          src={heroImg}
+          src="https://media.licdn.com/dms/image/v2/D4D03AQGs9X8YbY-FuQ/profile-displayphoto-shrink_400_400/B4DZP4yF.jHMAg-/0/1735045703416?e=1743033600&v=beta&t=h-lyaynEdC8qn4odwjzoKdK36DfXc9nniKqyjoq0-B4"
           className={styles.hero}
           alt="Profile picture of Harris Johnsen"
         />
