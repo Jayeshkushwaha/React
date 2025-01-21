@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/React/static/css/main.799a3d1d.css",
-    "main.js": "/React/static/js/main.512d7cb0.js",
+    "main.css": "/React/static/css/main.dd723bb0.css",
+    "main.js": "/React/static/js/main.cd9b5e21.js",
     "static/media/Design uten navn.webp": "/React/static/media/Design uten navn.5d64e5aef81a97d4a5e8.webp",
     "static/media/cv.pdf": "/React/static/media/cv.26d48485220b099a4039.pdf",
     "static/media/pos.png": "/React/static/media/pos.bc373f96b3ffde2eea49.png",
@@ -17,11 +17,11 @@
     "static/media/checkmark-dark.svg": "/React/static/media/checkmark-dark.1826eabf0e2181d2f2c88d7b72731149.svg",
     "static/media/checkmark-light.svg": "/React/static/media/checkmark-light.c8c345ee162e424f794588a227e27958.svg",
     "index.html": "/React/index.html",
-    "main.799a3d1d.css.map": "/React/static/css/main.799a3d1d.css.map",
-    "main.512d7cb0.js.map": "/React/static/js/main.512d7cb0.js.map"
+    "main.dd723bb0.css.map": "/React/static/css/main.dd723bb0.css.map",
+    "main.cd9b5e21.js.map": "/React/static/js/main.cd9b5e21.js.map"
   },
   "entrypoints": [
-    "static/css/main.799a3d1d.css",
-    "static/js/main.512d7cb0.js"
+    "static/css/main.dd723bb0.css",
+    "static/js/main.cd9b5e21.js"
   ]
 }
