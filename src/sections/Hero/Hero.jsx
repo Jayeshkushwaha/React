@@ -56,7 +56,6 @@ function Hero() {
         </a>
       </div>
     </section>
-    <div/>
     </>
   );
 }
