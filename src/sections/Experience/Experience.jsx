@@ -17,7 +17,7 @@ function Experience() {
           link="https://www.elsner.com/"
           h3="Elsner Technologies Pvt. Ltd."
           h2="July 2024 - January 2025"
-          p="I’m currently working on existing projects at Builder.ai, where I use React Native to create dynamic and scalable mobile applications. My focus is on providing seamless user experiences and improving app performance to meet the unique needs of each client. I’m excited to be part of a team that constantly pushes the boundaries of innovation in mobile app development."
+          p="I worked on existing projects at Builder.ai. My focus is on providing seamless user experiences and improving app performance to meet the unique needs of each client. I’m excited to be part of a team that constantly pushes the boundaries of innovation in mobile app development."
         />
         <ExperienceCard
           link="https://www.peerbits.com/"
