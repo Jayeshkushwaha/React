@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/React/static/css/main.686b0239.css",
-    "main.js": "/React/static/js/main.421a2b07.js",
+    "main.js": "/React/static/js/main.3af84702.js",
     "static/media/Design uten navn.webp": "/React/static/media/Design uten navn.5d64e5aef81a97d4a5e8.webp",
-    "static/media/cv.pdf": "/React/static/media/cv.26d48485220b099a4039.pdf",
+    "static/media/cv.pdf": "/React/static/media/cv.60506163ac65020169ed.pdf",
     "static/media/pos.png": "/React/static/media/pos.bc373f96b3ffde2eea49.png",
     "static/media/hipsster.png": "/React/static/media/hipsster.21336474fe92cc32b14d.png",
     "static/media/driver.png": "/React/static/media/driver.1679e3992756946104e7.png",
@@ -18,10 +18,10 @@
     "static/media/checkmark-light.svg": "/React/static/media/checkmark-light.c8c345ee162e424f794588a227e27958.svg",
     "index.html": "/React/index.html",
     "main.686b0239.css.map": "/React/static/css/main.686b0239.css.map",
-    "main.421a2b07.js.map": "/React/static/js/main.421a2b07.js.map"
+    "main.3af84702.js.map": "/React/static/js/main.3af84702.js.map"
   },
   "entrypoints": [
     "static/css/main.686b0239.css",
-    "static/js/main.421a2b07.js"
+    "static/js/main.3af84702.js"
   ]
 }
