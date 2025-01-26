@@ -21,7 +21,7 @@ function Projects() {
         />
         <ProjectCard
           src={freshBurger}
-          link="https://apps.apple.com/in/app/myne-wealth/id6739069238"
+          link="https://joinmyne.com/"
           h3="MYNE"
           p="Net Worth Tracker"
         />
