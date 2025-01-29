@@ -51,7 +51,7 @@ function Projects() {
         />
         <ProjectCard
           src="https://www.mypoleasy.com/wp-content/uploads/2023/05/Logo.svg"
-          link="https://www.mypoleasy.com/get-started/policyholders-first-time-buyers/"
+          link="https://www.mypoleasy.com/"
           h3="PolEasy"
           p="Insurance"
         />
