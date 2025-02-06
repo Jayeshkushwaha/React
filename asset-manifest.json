@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/React/static/css/main.686b0239.css",
-    "main.js": "/React/static/js/main.2778b4dd.js",
+    "main.js": "/React/static/js/main.bd901fee.js",
     "static/media/Design uten navn.webp": "/React/static/media/Design uten navn.5d64e5aef81a97d4a5e8.webp",
-    "static/media/cv.pdf": "/React/static/media/cv.0f2bc5ea1ec6a405274f.pdf",
+    "static/media/cv.pdf": "/React/static/media/cv.b133c542f440a843e781.pdf",
     "static/media/pos.png": "/React/static/media/pos.bc373f96b3ffde2eea49.png",
     "static/media/hipsster.png": "/React/static/media/hipsster.21336474fe92cc32b14d.png",
     "static/media/driver.png": "/React/static/media/driver.1679e3992756946104e7.png",
@@ -20,10 +20,10 @@
     "static/media/email-light.svg": "/React/static/media/email-light.a0a672f449e61b63c8cdebeb64af8171.svg",
     "static/media/email-dark.svg": "/React/static/media/email-dark.7a4e11f19ce7df45b2bcd3c310ae763f.svg",
     "main.686b0239.css.map": "/React/static/css/main.686b0239.css.map",
-    "main.2778b4dd.js.map": "/React/static/js/main.2778b4dd.js.map"
+    "main.bd901fee.js.map": "/React/static/js/main.bd901fee.js.map"
   },
   "entrypoints": [
     "static/css/main.686b0239.css",
-    "static/js/main.2778b4dd.js"
+    "static/js/main.bd901fee.js"
   ]
 }
