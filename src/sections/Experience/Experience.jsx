@@ -28,7 +28,7 @@ function Experience() {
         <ExperienceCard
           link="https://www.ecosmob.com/"
           h3="Ecosmob Technologies"
-          h2="June 2022 - January 2023"
+          h2="January 2022 - January 2023"
           p="Developed crossplatform applications using the React Native framework for both Android and iOS, with expertise in designing and implementing screen layouts to deliver a seamless user experience. Experienced in integrating APIs using RESTful architectures to ensure efficient data management and communication. Proficient in enhancing React Native applications by adding features and interactions that improve usability and increase user engagement."
         />
       </div>
