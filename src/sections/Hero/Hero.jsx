@@ -55,7 +55,7 @@ function Hero() {
           </a>
         </span>
         <p className={styles.description}>
-        Passionate React Native Developer with 2.6 years of experience in developing user-friendly mobile applications.
+        Passionate React Native Developer with 3 years of experience in developing user-friendly mobile applications.
         </p>
         <a href={CV} download>
           <button className="hover">Resume</button>
