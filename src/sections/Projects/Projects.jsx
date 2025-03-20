@@ -50,7 +50,7 @@ function Projects() {
           p="Point of Sale"
         />
         <ProjectCard
-          src="https://www.mypoleasy.com/wp-content/uploads/2023/05/Logo.svg"
+          src="https://media.licdn.com/dms/image/v2/D560BAQHTw2JD_FhB8g/company-logo_200_200/company-logo_200_200/0/1719568602975/poleasy_logo?e=1747872000&v=beta&t=884Gluc0lh0tKcc586ck8zLD5Kj9SCs0rkXXo8u4hcE"
           link="https://www.mypoleasy.com/"
           h3="PolEasy"
           p="Insurance"
