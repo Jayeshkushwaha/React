@@ -6,6 +6,9 @@
   --text-color: #222;
   --form-text-color: #555;
   --footer-text-color: #888;
+  --transition-duration: 0.3s;
+  --border-radius: 8px;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 [data-theme='dark'] {
@@ -16,6 +19,11 @@
   --text-color: #fff;
   --form-text-color: #fff;
   --footer-text-color: #bbb;
+  --shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -23,12 +31,18 @@ body {
   display: flex;
   justify-content: center;
   margin: 0 auto 60px;
+  transition: background-color var(--transition-duration) ease;
+  scroll-behavior: smooth;
+  line-height: 1.6;
 }
 
 #root {
   display: flex;
   flex-direction: column;
   gap: 60px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
 }
 
 h1,
@@ -39,6 +53,7 @@ p {
   color: var(--text-color);
   margin: 0;
   padding: 0;
+  transition: color var(--transition-duration) ease;
 }
 
 h2,
@@ -51,6 +66,7 @@ p {
 h1,
 h2 {
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 h2,
@@ -61,6 +77,7 @@ h3 {
 h1 {
   font-family: 'Rubik', sans-serif;
   font-size: 32px;
+  font-weight: 700;
 }
 
 p {
@@ -70,23 +87,100 @@ p {
 
 .sectionTitle {
   margin-bottom: 30px;
+  position: relative;
+}
+
+.sectionTitle::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--btn-color);
+  margin-top: 10px;
+  border-radius: 2px;
+  transition: background-color var(--transition-duration) ease;
 }
 
 .hover {
   cursor: pointer;
+  transition: all var(--transition-duration) ease;
+  border-radius: var(--border-radius);
+}
+
+.hover:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.hover:focus {
+  outline: 2px solid var(--btn-color);
+  outline-offset: 2px;
+}
+
+/* Button improvements */
+button {
+  background-color: var(--btn-color);
+  color: var(--btn-text-color);
+  border: none;
+  padding: 12px 24px;
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-duration) ease;
+  box-shadow: var(--shadow);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+button:focus {
+  outline: 2px solid var(--btn-color);
+  outline-offset: 2px;
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Loading animation for images */
+img {
+  transition: opacity var(--transition-duration) ease;
+}
+
+img:not([src]) {
+  opacity: 0;
+}
+
+/* Improved link styles */
+a {
+  transition: all var(--transition-duration) ease;
+  text-decoration: none;
+}
+
+a:focus {
+  outline: 2px solid var(--btn-color);
+  outline-offset: 2px;
+  border-radius: var(--border-radius);
 }
 
 @media (width >= 800px) {
   #root {
     gap: 100px;
+    padding: 0 40px;
   }
+  
   h1 {
     font-size: 40px;
   }
+  
   h2,
   h3 {
     font-size: 24px;
   }
+  
   p {
     font-size: 20px;
   }
@@ -94,17 +188,36 @@ p {
   .sectionTitle {
     margin-bottom: 60px;
   }
+}
 
-  @media (width >= 1400px) {
-    #root {
-      gap: 200px;
-    }
-    h1 {
-      font-size: 48px;
-    }
+@media (width >= 1400px) {
+  #root {
+    gap: 200px;
+    padding: 0 60px;
+  }
+  
+  h1 {
+    font-size: 48px;
+  }
 
-    .sectionTitle {
-      margin-bottom: 75px;
-    }
+  .sectionTitle {
+    margin-bottom: 75px;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .hover:hover {
+    transform: none;
+  }
+  
+  button:hover {
+    transform: none;
   }
 }
