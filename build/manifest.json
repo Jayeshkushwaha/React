@@ -4,18 +4,18 @@
   "description": "Portfolio website of Jayesh Kushwaha, a passionate React Native Developer with 3 years of experience",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "https://lh3.googleusercontent.com/a/ACg8ocJ6BrEzfY-bipXkHldIDhsiZaMZ3YGDoIZ-6Pu6wnTTGdGsZeCW=s64-c-no",
+      "sizes": "64x64",
+      "type": "image/png"
     },
     {
-      "src": "logo192.png",
+      "src": "https://lh3.googleusercontent.com/a/ACg8ocJ6BrEzfY-bipXkHldIDhsiZaMZ3YGDoIZ-6Pu6wnTTGdGsZeCW=s192-c-no",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "any maskable"
     },
     {
-      "src": "logo512.png",
+      "src": "https://lh3.googleusercontent.com/a/ACg8ocJ6BrEzfY-bipXkHldIDhsiZaMZ3YGDoIZ-6Pu6wnTTGdGsZeCW=s512-c-no",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "any maskable"
@@ -23,8 +23,8 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#0987f2",
-  "background_color": "#ffffff",
+  "theme_color": "#667eea",
+  "background_color": "#fafbfc",
   "orientation": "portrait-primary",
   "categories": ["productivity", "business", "portfolio"],
   "lang": "en",

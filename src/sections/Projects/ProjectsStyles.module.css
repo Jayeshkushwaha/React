@@ -2,44 +2,167 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-
-  img {
-    width: 250px;
-    height: 250px;
-    align-self: center;
-    background-color: var(--project-card-bg);
-    border-radius: 20px;
-    margin-bottom: 10px;
-  }
-
-  h3 {
-    margin-bottom: 5px;
-  }
-
-  a {
-    width: fit-content;
-    text-decoration: none;
-    color: #222;
-    transition: transform 200ms ease-in-out;
-  }
-
-  a:hover {
-    transform: scale(1.05);
-  }
+  padding: 2rem 0;
 }
 
 .projectsContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 0 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projectCard {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: all var(--transition-duration) ease;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  min-height: 280px;
 }
 
-@media (width >= 800px) {
+.projectCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--btn-gradient);
+  transform: scaleX(0);
+  transition: transform var(--transition-duration) ease;
+}
+
+.projectCard:hover::before {
+  transform: scaleX(1);
+}
+
+.projectCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.projectCard img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 2px solid var(--btn-color);
+  transition: all var(--transition-duration) ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.projectCard:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.projectCard h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+  background: var(--btn-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+}
+
+.projectCard p {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  text-align: center;
+  margin-top: auto;
+  font-weight: 500;
+}
+
+
+
+/* Tablet - 3 columns */
+@media (width >= 768px) {
   .projectsContainer {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding: 0 30px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 0 1.5rem;
+  }
+  
+  .projectCard {
+    padding: 1.8rem;
+    min-height: 320px;
+  }
+  
+  .projectCard img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .projectCard h3 {
+    font-size: 1.3rem;
+  }
+  
+  .projectCard p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Desktop - 4 columns */
+@media (width >= 1024px) {
+  .projectsContainer {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+  
+  .projectCard {
+    padding: 2rem;
+    min-height: 350px;
+  }
+  
+  .projectCard img {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .projectCard h3 {
+    font-size: 1.4rem;
+  }
+  
+  .projectCard p {
+    font-size: 1rem;
+  }
+}
+
+/* Large Desktop - maintain 4 columns but larger cards */
+@media (width >= 1200px) {
+  .projectsContainer {
+    gap: 2.5rem;
+  }
+  
+  .projectCard {
+    padding: 2.5rem;
+  }
+  
+  .projectCard img {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .projectCard h3 {
+    font-size: 1.5rem;
   }
 }

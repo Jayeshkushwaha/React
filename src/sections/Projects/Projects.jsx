@@ -17,43 +17,43 @@ function Projects() {
           src="https://media.licdn.com/dms/image/v2/D560BAQFvq7qqylg7tg/company-logo_200_200/B56ZUDlP1_HQAM-/0/1739521851285/xtraplayersports_logo?e=1755129600&v=beta&t=Une8b5DPzAomvSEsFEGQ3Ppukn7mVCQlTL2xbsUdlPw"
           link="https://www.xtraplayer.com/"
           h3="Xtraplayer"
-          p="Cricket Scoring"
+          p="Cricket Scoring Application with Real-time Updates"
         />
         <ProjectCard
           src={freshBurger}
           link="https://joinmyne.com/"
           h3="MYNE"
-          p="Net Worth Tracker"
+          p="Comprehensive Net Worth Tracking Platform"
         />
         <ProjectCard
           src={hipsster}
           link="https://play.google.com/store/apps/details?id=nl.secure2go.addressregapp&hl=en_US"
           h3="Secure2Go"
-          p="Alarm System"
+          p="Advanced Security & Alarm Management System"
         />
         <ProjectCard
           src={fitLift}
           link="https://play.google.com/store/apps/details?id=com.yelowsoft.user&hl=en_US"
           h3="Yelowsoft"
-          p="Car Booking & Food Delivery"
+          p="Multi-Service Platform: Car Booking & Food Delivery"
         />
         <ProjectCard
           src={driver}
           link="https://play.google.com/store/apps/details?id=com.yelowsoft.driver&hl=en"
           h3="Yelowsoft Driver"
-          p="Ride-Hailing Drivers"
+          p="Professional Driver Management & Ride-Hailing App"
         />
         <ProjectCard
           src={pos}
           link="https://play.google.com/store/apps/details?id=com.yelowsoft.pos&hl=en_US"
           h3="Yelowsoft POS"
-          p="Point of Sale"
+          p="Complete Point of Sale & Business Management Solution"
         />
         <ProjectCard
           src="https://media.licdn.com/dms/image/v2/D560BAQHTw2JD_FhB8g/company-logo_200_200/company-logo_200_200/0/1719568602975/poleasy_logo?e=1755129600&v=beta&t=q4XeShmlt5d0hyjkj1SLyRYuz9V11JAfv3sReeJWqKU"
           link="https://www.mypoleasy.com/"
           h3="PolEasy"
-          p="Insurance"
+          p="Digital Insurance Platform with Smart Policy Management"
         />
       </div>
     </section>
