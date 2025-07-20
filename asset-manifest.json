@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/React/static/css/main.58d6eac5.css",
-    "main.js": "/React/static/js/main.3882aecd.js",
+    "main.css": "/React/static/css/main.96fb9f2f.css",
+    "main.js": "/React/static/js/main.7428532e.js",
     "static/media/Design uten navn.webp": "/React/static/media/Design uten navn.5d64e5aef81a97d4a5e8.webp",
     "static/media/cv.pdf": "/React/static/media/cv.0296b181e61fd163de1a.pdf",
     "static/media/pos.png": "/React/static/media/pos.bc373f96b3ffde2eea49.png",
@@ -15,14 +15,15 @@
     "static/media/moon.svg": "/React/static/media/moon.e8ceccc7130ff6ac43ef85eedc8c3005.svg",
     "static/media/linkedin-dark.svg": "/React/static/media/linkedin-dark.4849f84a7e76fde3e7508ef828cf6d7b.svg",
     "static/media/linkedin-light.svg": "/React/static/media/linkedin-light.f52c806dae34fc7afae25af380bf8c66.svg",
+    "static/media/checkmark-dark.svg": "/React/static/media/checkmark-dark.1826eabf0e2181d2f2c88d7b72731149.svg",
     "static/media/checkmark-light.svg": "/React/static/media/checkmark-light.c8c345ee162e424f794588a227e27958.svg",
     "static/media/email-light.svg": "/React/static/media/email-light.a0a672f449e61b63c8cdebeb64af8171.svg",
     "static/media/email-dark.svg": "/React/static/media/email-dark.7a4e11f19ce7df45b2bcd3c310ae763f.svg",
-    "main.58d6eac5.css.map": "/React/static/css/main.58d6eac5.css.map",
-    "main.3882aecd.js.map": "/React/static/js/main.3882aecd.js.map"
+    "main.96fb9f2f.css.map": "/React/static/css/main.96fb9f2f.css.map",
+    "main.7428532e.js.map": "/React/static/js/main.7428532e.js.map"
   },
   "entrypoints": [
-    "static/css/main.58d6eac5.css",
-    "static/js/main.3882aecd.js"
+    "static/css/main.96fb9f2f.css",
+    "static/js/main.7428532e.js"
   ]
 }
