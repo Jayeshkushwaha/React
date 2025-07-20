@@ -1,299 +1,48 @@
 .container {
-  padding: 4rem 0;
+  padding: 2rem;
   text-align: center;
-  position: relative;
+
+  img {
+    width: 250px;
+    height: 250px;
+    align-self: center;
+    background-color: var(--project-card-bg);
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    margin-bottom: 10px;
+  }
+
+  h4 {
+    margin-bottom: 5px;
+  }
+
+  a {
+    width: fit-content;
+    text-decoration: none;
+    color: #222;
+    transition: transform 200ms ease-in-out;
+  }
+
+  a:hover {
+    transform: scale(1.05);
+  }
 }
 
-.timeline {
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: var(--btn-gradient);
-  transform: translateX(-50%);
-  border-radius: 2px;
-  box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
-}
-
-.timelineItem {
-  position: relative;
-  margin-bottom: 4rem;
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.timelineItem:nth-child(odd) {
-  flex-direction: row;
-}
-
-.timelineItem:nth-child(even) {
-  flex-direction: row-reverse;
-}
-
-.timelineItem::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 20px;
-  height: 20px;
-  background: var(--btn-gradient);
-  border-radius: 50%;
-  border: 4px solid var(--background-color);
-  box-shadow: 0 0 0 4px var(--btn-color), 0 0 20px rgba(102, 126, 234, 0.5);
-  z-index: 10;
-}
-
-.experienceCard {
-  background: var(--glass-bg);
-  backdrop-filter: blur(25px);
-  border: 1px solid var(--glass-border);
-  border-radius: 20px;
-  padding: 2.5rem;
-  text-decoration: none;
-  color: var(--text-color);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: var(--shadow);
-  position: relative;
-  overflow: hidden;
-  text-align: left;
-  width: calc(50% - 2rem);
-  margin: 0 2rem;
-  opacity: 1;
-}
-
-.experienceCard::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--btn-gradient);
-  transform: scaleX(0);
-  transition: transform 0.4s ease;
-}
-
-.experienceCard:hover::before {
-  transform: scaleX(1);
-}
-
-.experienceCard:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-hover);
-  border-color: rgba(255, 255, 255, 0.4);
-}
-
-.cardHeader {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.companyLogo {
-  width: 60px;
-  height: 60px;
-  border-radius: 12px;
-  background: var(--btn-gradient);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: 700;
-  font-size: 1.5rem;
-  flex-shrink: 0;
-}
-
-.cardContent h3 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: var(--text-color);
-  background: var(--btn-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  line-height: 1.2;
-}
-
-.cardContent h4 {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--accent-color);
-  margin-bottom: 1.5rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.cardContent h4::before {
-  content: '📅';
-  font-size: 1rem;
-}
-
-.cardContent p {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.7;
-  font-weight: 400;
-  margin: 0;
-}
-
-.skillTags {
+.projectsContainer {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1.5rem;
-}
-
-.skillTag {
-  background: rgba(102, 126, 234, 0.1);
-  color: var(--btn-color);
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  border: 1px solid rgba(102, 126, 234, 0.2);
-}
-
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Mobile Design */
-@media (max-width: 768px) {
-  .timeline::before {
-    left: 2rem;
-    transform: none;
-  }
-  
-  .timelineItem {
-    flex-direction: column !important;
-    align-items: flex-start;
-    margin-bottom: 3rem;
-    padding-left: 4rem;
-  }
-  
-  .timelineItem::before {
-    left: 2rem;
-    transform: translateX(-50%);
-    width: 16px;
-    height: 16px;
-  }
-  
-  .experienceCard {
-    width: 100%;
-    margin: 0;
-    padding: 2rem;
-  }
-  
-  .cardHeader {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-  
-  .companyLogo {
-    width: 50px;
-    height: 50px;
-    font-size: 1.2rem;
-  }
-  
-  .cardContent h3 {
-    font-size: 1.2rem;
-  }
-  
-  .cardContent h4 {
-    font-size: 0.8rem;
-  }
-  
-  .cardContent p {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding: 2rem 0;
-  }
-  
-  .timeline {
-    padding: 0 0.5rem;
-  }
-  
-  .timelineItem {
-    padding-left: 3rem;
-    margin-bottom: 2rem;
-  }
-  
-  .timelineItem::before {
-    left: 1.5rem;
-    width: 14px;
-    height: 14px;
-  }
-  
-  .timeline::before {
-    left: 1.5rem;
-    width: 3px;
-  }
-  
-  .experienceCard {
-    padding: 1.5rem;
-  }
-  
-  .cardContent h3 {
-    font-size: 1.1rem;
-  }
-  
-  .cardContent p {
-    font-size: 0.85rem;
-  }
-  
-  .skillTags {
-    margin-top: 1rem;
-  }
-  
-  .skillTag {
-    font-size: 0.7rem;
-    padding: 0.2rem 0.6rem;
-  }
+  justify-content: space-between;
+  gap: 1.5rem;
 }
 
 @media (width >= 800px) {
-  .experienceCard {
-    padding: 3rem;
-  }
-  
-  .cardContent h3 {
-    font-size: 1.6rem;
-  }
-  
-  .cardContent h4 {
-    font-size: 1rem;
-  }
-  
-  .cardContent p {
-    font-size: 1rem;
+  .projectsContainer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0 30px;
   }
 }
