@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/React/static/css/main.96fb9f2f.css",
-    "main.js": "/React/static/js/main.7428532e.js",
+    "main.css": "/React/static/css/main.9b4dbae9.css",
+    "main.js": "/React/static/js/main.9c89ab29.js",
     "static/media/Design uten navn.webp": "/React/static/media/Design uten navn.5d64e5aef81a97d4a5e8.webp",
     "static/media/cv.pdf": "/React/static/media/cv.0296b181e61fd163de1a.pdf",
     "static/media/pos.png": "/React/static/media/pos.bc373f96b3ffde2eea49.png",
@@ -19,11 +19,11 @@
     "static/media/checkmark-light.svg": "/React/static/media/checkmark-light.c8c345ee162e424f794588a227e27958.svg",
     "static/media/email-light.svg": "/React/static/media/email-light.a0a672f449e61b63c8cdebeb64af8171.svg",
     "static/media/email-dark.svg": "/React/static/media/email-dark.7a4e11f19ce7df45b2bcd3c310ae763f.svg",
-    "main.96fb9f2f.css.map": "/React/static/css/main.96fb9f2f.css.map",
-    "main.7428532e.js.map": "/React/static/js/main.7428532e.js.map"
+    "main.9b4dbae9.css.map": "/React/static/css/main.9b4dbae9.css.map",
+    "main.9c89ab29.js.map": "/React/static/js/main.9c89ab29.js.map"
   },
   "entrypoints": [
-    "static/css/main.96fb9f2f.css",
-    "static/js/main.7428532e.js"
+    "static/css/main.9b4dbae9.css",
+    "static/js/main.9c89ab29.js"
   ]
 }
