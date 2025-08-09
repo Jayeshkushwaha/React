@@ -1,48 +1,327 @@
 .container {
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
   text-align: center;
-
-  img {
-    width: 250px;
-    height: 250px;
-    align-self: center;
-    background-color: var(--project-card-bg);
-    border-radius: 20px;
-    margin-bottom: 10px;
-  }
-
-  h3 {
-    margin-bottom: 10px;
-  }
-
-  h4 {
-    margin-bottom: 5px;
-  }
-
-  a {
-    width: fit-content;
-    text-decoration: none;
-    color: #222;
-    transition: transform 200ms ease-in-out;
-  }
-
-  a:hover {
-    transform: scale(1.05);
-  }
+  position: relative;
 }
 
 .projectsContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+  padding: var(--spacing-md);
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.experienceCard {
+  background: var(--card-bg);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--card-border);
+  transition: all var(--transition-duration) var(--transition-ease);
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.experienceCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--gradient-accent);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform var(--transition-duration) var(--transition-ease);
+}
+
+.experienceCard:hover::before {
+  transform: scaleY(1);
+}
+
+.experienceCard::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(9, 135, 242, 0.05), transparent);
+  transition: left 0.6s;
+}
+
+.experienceCard:hover::after {
+  left: 100%;
+}
+
+.experienceCard:hover {
+  transform: translateX(8px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--btn-color);
+}
+
+.experienceHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-lg);
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.companyInfo {
+  flex: 1;
+}
+
+.experienceCard h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0 0 var(--spacing-sm) 0;
+  letter-spacing: -0.02em;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.experienceCard h2 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: var(--spacing-xs) var(--spacing-md);
+  background: var(--surface-color);
+  border-radius: var(--border-radius-sm);
+  display: inline-block;
+  border: 1px solid var(--card-border);
+}
+
+.experienceCard p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.experienceCard a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+.experienceLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-lg);
+  color: var(--btn-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all var(--transition-duration) var(--transition-ease);
+  position: relative;
+}
+
+.experienceLink::after {
+  content: '→';
+  transition: transform var(--transition-duration) var(--transition-ease);
+}
+
+.experienceLink:hover {
+  gap: var(--spacing-md);
+  color: var(--btn-hover-color);
+}
+
+.experienceLink:hover::after {
+  transform: translateX(4px);
+}
+
+/* Timeline indicator */
+.timeline {
+  position: absolute;
+  left: -40px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--card-border);
+}
+
+.timelineDot {
+  position: absolute;
+  left: -46px;
+  top: var(--spacing-xl);
+  width: 14px;
+  height: 14px;
+  background: var(--btn-color);
+  border: 3px solid var(--background-color);
+  border-radius: 50%;
+  z-index: 1;
+  transition: all var(--transition-duration) var(--transition-ease);
+}
+
+.experienceCard:hover .timelineDot {
+  transform: scale(1.3);
+  box-shadow: 0 0 0 8px rgba(9, 135, 242, 0.1);
+}
+
+/* Stagger animation */
+.experienceCard:nth-child(1) {
+  animation: slideInLeft 0.6s var(--animation-smooth) 0.1s both;
+}
+
+.experienceCard:nth-child(2) {
+  animation: slideInLeft 0.6s var(--animation-smooth) 0.2s both;
+}
+
+.experienceCard:nth-child(3) {
+  animation: slideInLeft 0.6s var(--animation-smooth) 0.3s both;
+}
+
+/* Skills badges within experience */
+.experienceSkills {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 1.5rem;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--card-border);
+}
+
+.skillBadge {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--surface-color);
+  border-radius: var(--border-radius-sm);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  border: 1px solid var(--card-border);
+  transition: all var(--transition-duration) var(--transition-ease);
+}
+
+.skillBadge:hover {
+  background: var(--btn-color);
+  color: var(--btn-text-color);
+  border-color: var(--btn-color);
+  transform: translateY(-2px);
 }
 
 @media (width >= 800px) {
   .projectsContainer {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding: 0 30px;
+    padding: 0 var(--spacing-2xl);
+    position: relative;
+  }
+
+  .projectsContainer::before {
+    content: '';
+    position: absolute;
+    left: 60px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, transparent, var(--card-border), var(--card-border), transparent);
+  }
+
+  .experienceCard {
+    margin-left: 60px;
+    position: relative;
+  }
+
+  .timelineDot {
+    left: -34px;
+  }
+}
+
+@media (width >= 1400px) {
+  .experienceCard h3 {
+    font-size: 1.75rem;
+  }
+
+  .experienceCard p {
+    font-size: 1.125rem;
+  }
+}
+
+/* Loading skeleton */
+.experienceCardSkeleton {
+  background: var(--card-bg);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--card-border);
+  min-height: 200px;
+}
+
+.skeletonHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-lg);
+}
+
+.skeletonTitle {
+  height: 28px;
+  width: 200px;
+  background: linear-gradient(90deg, var(--surface-color) 0%, var(--card-bg) 50%, var(--surface-color) 100%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+  border-radius: var(--border-radius-sm);
+}
+
+.skeletonDate {
+  height: 24px;
+  width: 150px;
+  background: linear-gradient(90deg, var(--surface-color) 0%, var(--card-bg) 50%, var(--surface-color) 100%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+  border-radius: var(--border-radius-sm);
+}
+
+.skeletonText {
+  height: 16px;
+  background: linear-gradient(90deg, var(--surface-color) 0%, var(--card-bg) 50%, var(--surface-color) 100%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+  border-radius: var(--border-radius-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.skeletonText:nth-child(2) {
+  width: 90%;
+}
+
+.skeletonText:nth-child(3) {
+  width: 85%;
+}
+
+.skeletonText:last-child {
+  width: 75%;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
   }
 }

@@ -3,37 +3,111 @@ import checkMarkIconDark from '../../assets/checkmark-dark.svg';
 import checkMarkIconLight from '../../assets/checkmark-light.svg';
 import SkillList from '../../common/SkillList';
 import { useTheme } from '../../common/ThemeContext';
+import { motion } from 'framer-motion';
 
 function Skills() {
   const { theme } = useTheme();
   const checkMarkIcon = theme === 'light' ? checkMarkIconLight : checkMarkIconDark;
 
+  const skillCategories = [
+    {
+      title: "Frontend & Mobile",
+      skills: [
+        "React Native",
+        "JavaScript",
+        "TypeScript",
+        "Redux",
+        "Context API",
+        "REST APIs",
+        "GraphQL",
+        "Async Storage"
+      ]
+    },
+    {
+      title: "Tools & Platforms",
+      skills: [
+        "Firebase",
+        "GitHub",
+        "Bitbucket",
+        "GitLab",
+        "App Store",
+        "Play Store",
+        "CodePush",
+        "Fastlane"
+      ]
+    },
+    {
+      title: "Development & Testing",
+      skills: [
+        "UI/UX Design",
+        "Agile/Scrum",
+        "Jest Testing",
+        "Debugging",
+        "Performance",
+        "SonarQube",
+        "CI/CD",
+        "Code Review"
+      ]
+    }
+  ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: {
+        duration: 0.5
+      }
+    }
+  };
+
   return (
-    <section id="skills" className={styles.container}>
-      <h1 className="sectionTitle">Skills</h1>
-      <div className={styles.skillList}>
-        <SkillList src={checkMarkIcon} skill="React Native" />
-        <SkillList src={checkMarkIcon} skill="JavaScript" />
-        <SkillList src={checkMarkIcon} skill="TypeScript" />
-        <SkillList src={checkMarkIcon} skill="Redux" />
-        <SkillList src={checkMarkIcon} skill="REST APIs" />
-      </div>
-      <hr />
-      <div className={styles.skillList}>
-        <SkillList src={checkMarkIcon} skill="Firebase" />
-        <SkillList src={checkMarkIcon} skill="GitHub" />
-        <SkillList src={checkMarkIcon} skill="Bitbucket" />
-        <SkillList src={checkMarkIcon} skill="Gitlab" />
-      </div>
-      <hr />
-      <div className={styles.skillList}>
-        <SkillList src={checkMarkIcon} skill="User Interface Design" />
-        <SkillList src={checkMarkIcon} skill="Functionality" />
-        <SkillList src={checkMarkIcon} skill="Test Cases" />
-        <SkillList src={checkMarkIcon} skill="Sonarqube" />
-        <SkillList src={checkMarkIcon} skill="CI/CD" />
-      </div>
-    </section>
+    <motion.section 
+      id="skills" 
+      className={styles.container}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+      variants={containerVariants}
+    >
+      <motion.h1 className="sectionTitle" variants={itemVariants}>Skills</motion.h1>
+      <motion.div className={styles.skillsContainer} variants={containerVariants}>
+        {skillCategories.map((category, index) => (
+          <motion.div 
+            key={index} 
+            className={styles.skillCategory}
+            variants={itemVariants}
+            whileHover={{ scale: 1.02 }}
+          >
+            <h3 className={styles.categoryTitle}>{category.title}</h3>
+            <motion.div className={styles.skillList}>
+              {category.skills.map((skill, skillIndex) => (
+                <motion.div
+                  key={skillIndex}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: skillIndex * 0.05 }}
+                  viewport={{ once: true }}
+                >
+                  <SkillList src={checkMarkIcon} skill={skill} />
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
+        ))}
+      </motion.div>
+    </motion.section>
   );
 }
 

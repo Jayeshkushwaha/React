@@ -1,7 +1,305 @@
 .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-3xl) var(--spacing-lg);
+  margin-top: var(--spacing-3xl);
+  position: relative;
+  background: linear-gradient(180deg, transparent, var(--surface-color));
+  border-top: 1px solid var(--card-border);
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 2px;
+  background: var(--gradient-accent);
+  border-radius: var(--border-radius-sm);
+}
+
+.footerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xl);
+  max-width: 800px;
+  width: 100%;
   text-align: center;
-  p {
-    font-size: 16px;
+}
+
+.footerText {
+  color: var(--footer-text-color);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.footerText strong {
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.socialLinks {
+  display: flex;
+  gap: var(--spacing-lg);
+  align-items: center;
+  justify-content: center;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius);
+  transition: all var(--transition-duration) var(--transition-ease);
+  position: relative;
+  overflow: hidden;
+}
+
+.socialLink::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-primary);
+  transition: left 0.3s;
+  z-index: 0;
+}
+
+.socialLink:hover::before {
+  left: 0;
+}
+
+.socialLink:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+  border-color: var(--btn-color);
+}
+
+.socialLink img {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  z-index: 1;
+  transition: filter var(--transition-duration) var(--transition-ease);
+}
+
+.socialLink:hover img {
+  filter: brightness(0) invert(1);
+}
+
+.copyright {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--card-border);
+  width: 100%;
+}
+
+.copyrightText {
+  color: var(--footer-text-color);
+  font-size: 0.75rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.copyrightText a {
+  color: var(--btn-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all var(--transition-duration) var(--transition-ease);
+}
+
+.copyrightText a:hover {
+  color: var(--btn-hover-color);
+  text-decoration: underline;
+}
+
+.heart {
+  color: #e74c3c;
+  animation: pulse 1.5s ease-in-out infinite;
+  display: inline-block;
+}
+
+.backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 48px;
+  height: 48px;
+  background: var(--gradient-primary);
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--btn-text-color);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: all var(--transition-duration) var(--transition-ease);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+
+.backToTop.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.backToTop:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.backToTop::after {
+  content: '↑';
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Newsletter section */
+.newsletter {
+  background: var(--card-bg);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--card-border);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.newsletterTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+.newsletterText {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin: 0 0 var(--spacing-lg) 0;
+}
+
+.newsletterForm {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-direction: column;
+}
+
+.newsletterInput {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--surface-color);
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius-sm);
+  color: var(--text-color);
+  font-size: 0.875rem;
+  transition: all var(--transition-duration) var(--transition-ease);
+}
+
+.newsletterInput:focus {
+  outline: none;
+  border-color: var(--btn-color);
+  box-shadow: 0 0 0 3px rgba(9, 135, 242, 0.1);
+}
+
+.newsletterButton {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: var(--gradient-primary);
+  color: var(--btn-text-color);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all var(--transition-duration) var(--transition-ease);
+}
+
+.newsletterButton:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+@media (width >= 600px) {
+  .newsletterForm {
+    flex-direction: row;
+  }
+
+  .newsletterInput {
+    flex: 1;
+  }
+}
+
+@media (width >= 800px) {
+  .container {
+    padding: var(--spacing-3xl) var(--spacing-xl);
+  }
+
+  .footerContent {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .footerInfo {
+    flex: 1;
+  }
+
+  .footerLinks {
+    display: flex;
+    gap: var(--spacing-3xl);
+  }
+
+  .footerColumn {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .footerColumn h4 {
+    color: var(--text-color);
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin: 0 0 var(--spacing-sm) 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .footerColumn a {
     color: var(--footer-text-color);
-  };
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: all var(--transition-duration) var(--transition-ease);
+  }
+
+  .footerColumn a:hover {
+    color: var(--btn-color);
+    transform: translateX(4px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
 }

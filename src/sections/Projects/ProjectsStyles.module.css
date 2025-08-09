@@ -2,44 +2,283 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-
-  img {
-    width: 250px;
-    height: 250px;
-    align-self: center;
-    background-color: var(--project-card-bg);
-    border-radius: 20px;
-    margin-bottom: 10px;
-  }
-
-  h3 {
-    margin-bottom: 5px;
-  }
-
-  a {
-    width: fit-content;
-    text-decoration: none;
-    color: #222;
-    transition: transform 200ms ease-in-out;
-  }
-
-  a:hover {
-    transform: scale(1.05);
-  }
+  position: relative;
 }
 
 .projectsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--spacing-xl);
+  padding: var(--spacing-md);
+  animation: fadeInUp 0.8s var(--animation-smooth) both;
+}
+
+.projectCard {
+  background: var(--card-bg);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--card-border);
+  transition: all var(--transition-duration) var(--transition-ease);
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 30px;
+  height: 100%;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.projectCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-duration) var(--transition-ease);
+}
+
+.projectCard:hover::before {
+  transform: scaleX(1);
+}
+
+.projectCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--btn-color);
+}
+
+.projectCard img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  transition: all var(--transition-duration) var(--transition-ease);
+  border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+}
+
+.projectCard:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.projectContent {
+  padding: var(--spacing-lg);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.projectCard h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0 0 var(--spacing-sm) 0;
+  letter-spacing: -0.02em;
+}
+
+.projectCard p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  flex-grow: 1;
+  margin: 0;
+}
+
+.projectLinks {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--card-border);
+}
+
+.projectLink {
+  flex: 1;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--gradient-primary);
+  color: var(--btn-text-color);
+  text-decoration: none;
+  border-radius: var(--border-radius-sm);
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  transition: all var(--transition-duration) var(--transition-ease);
+  position: relative;
+  overflow: hidden;
+}
+
+.projectLink::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.projectLink:hover::after {
+  left: 100%;
+}
+
+.projectLink:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+  filter: brightness(1.1);
+}
+
+.projectLink:active {
+  transform: translateY(0);
+  filter: brightness(0.95);
+}
+
+.container a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+/* Stagger animation for cards */
+.projectCard:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.projectCard:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.projectCard:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.projectCard:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.projectCard:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.projectCard:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* Tags */
+.projectTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+}
+
+.tag {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--surface-color);
+  border-radius: var(--border-radius-sm);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  border: 1px solid var(--card-border);
+  transition: all var(--transition-duration) var(--transition-ease);
+}
+
+.tag:hover {
+  background: var(--btn-color);
+  color: var(--btn-text-color);
+  border-color: var(--btn-color);
 }
 
 @media (width >= 800px) {
   .projectsContainer {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding: 0 30px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-2xl);
+    padding: 0 var(--spacing-xl);
+  }
+
+  .projectCard img {
+    height: 280px;
+  }
+}
+
+@media (width >= 1400px) {
+  .projectsContainer {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-3xl);
+    padding: 0;
+  }
+
+  .projectCard img {
+    height: 300px;
+  }
+}
+
+/* Loading state */
+.projectCardSkeleton {
+  background: var(--card-bg);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--card-border);
+  min-height: 400px;
+}
+
+.skeletonImage {
+  width: 100%;
+  height: 240px;
+  background: linear-gradient(90deg, var(--surface-color) 0%, var(--card-bg) 50%, var(--surface-color) 100%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+.skeletonContent {
+  padding: var(--spacing-lg);
+}
+
+.skeletonTitle {
+  height: 24px;
+  background: linear-gradient(90deg, var(--surface-color) 0%, var(--card-bg) 50%, var(--surface-color) 100%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+  border-radius: var(--border-radius-sm);
+  margin-bottom: var(--spacing-md);
+  width: 70%;
+}
+
+.skeletonText {
+  height: 16px;
+  background: linear-gradient(90deg, var(--surface-color) 0%, var(--card-bg) 50%, var(--surface-color) 100%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+  border-radius: var(--border-radius-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.skeletonText:last-child {
+  width: 80%;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
   }
 }
