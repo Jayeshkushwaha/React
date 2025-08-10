@@ -139,7 +139,7 @@ function Hero() {
           </motion.a>
         </motion.nav>
         <motion.p className={styles.description} variants={itemVariants}>
-          Passionate React Native Developer with 3 years of experience in developing user-friendly mobile applications.
+          Experienced React Native Developer with 3.6+ years of expertise in building scalable mobile applications. Successfully delivered 8 live projects.
         </motion.p>
         <motion.a 
           href={CV} 

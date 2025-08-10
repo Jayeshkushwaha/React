@@ -11,42 +11,39 @@ function Skills() {
 
   const skillCategories = [
     {
-      title: "Frontend & Mobile",
+      title: "Core Technologies",
       skills: [
         "React Native",
         "JavaScript",
         "TypeScript",
         "Redux",
-        "Context API",
         "REST APIs",
-        "GraphQL",
-        "Async Storage"
+        "Tailwind CSS",
+        "Mapbox"
       ]
     },
     {
       title: "Tools & Platforms",
       skills: [
-        "Firebase",
         "GitHub",
-        "Bitbucket",
         "GitLab",
-        "App Store",
-        "Play Store",
-        "CodePush",
-        "Fastlane"
+        "Bitbucket",
+        "Firebase",
+        "Figma",
+        "Crashlytics",
+        "SonarQube"
       ]
     },
     {
-      title: "Development & Testing",
+      title: "Industry Knowledge",
       skills: [
-        "UI/UX Design",
-        "Agile/Scrum",
-        "Jest Testing",
-        "Debugging",
-        "Performance",
-        "SonarQube",
+        "User Interface Design",
+        "Functionality",
+        "Test Cases",
         "CI/CD",
-        "Code Review"
+        "Agile Development",
+        "Code Review",
+        "Performance Optimization"
       ]
     }
   ];
