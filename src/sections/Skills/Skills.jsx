@@ -1,49 +1,65 @@
 import styles from './SkillsStyles.module.css';
 import checkMarkIconDark from '../../assets/checkmark-dark.svg';
 import checkMarkIconLight from '../../assets/checkmark-light.svg';
-import SkillList from '../../common/SkillList';
 import { useTheme } from '../../common/ThemeContext';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 function Skills() {
   const { theme } = useTheme();
+  const [hoveredSkill, setHoveredSkill] = useState(null);
   const checkMarkIcon = theme === 'light' ? checkMarkIconLight : checkMarkIconDark;
 
-  const skillCategories = [
+  const skillsData = [
     {
-      title: "Core Technologies",
+      category: "Frontend & Mobile",
+      icon: "📱",
+      color: "#0987f2",
       skills: [
-        "React Native",
-        "JavaScript",
-        "TypeScript",
-        "Redux",
-        "REST APIs",
-        "Tailwind CSS",
-        "Mapbox"
+        { name: "React Native", level: 95, experience: "4 years" },
+        { name: "JavaScript", level: 90, experience: "4 years" },
+        { name: "TypeScript", level: 85, experience: "3 years" },
+        { name: "Redux", level: 88, experience: "3 years" },
+        { name: "React", level: 80, experience: "2 years" },
+        { name: "Tailwind CSS", level: 85, experience: "2 years" }
       ]
     },
     {
-      title: "Tools & Platforms",
+      category: "Backend & APIs",
+      icon: "⚡",
+      color: "#00d4ff",
       skills: [
-        "GitHub",
-        "GitLab",
-        "Bitbucket",
-        "Firebase",
-        "Figma",
-        "Crashlytics",
-        "SonarQube"
+        { name: "REST APIs", level: 90, experience: "4 years" },
+        { name: "Node.js", level: 75, experience: "2 years" },
+        { name: "Firebase", level: 85, experience: "3 years" },
+        { name: "WebSocket", level: 80, experience: "2 years" },
+        { name: "GraphQL", level: 70, experience: "1 year" }
       ]
     },
     {
-      title: "Industry Knowledge",
+      category: "Development Tools",
+      icon: "🛠️",
+      color: "#4caf50",
       skills: [
-        "User Interface Design",
-        "Functionality",
-        "Test Cases",
-        "CI/CD",
-        "Agile Development",
-        "Code Review",
-        "Performance Optimization"
+        { name: "Git/GitHub", level: 90, experience: "4 years" },
+        { name: "GitLab", level: 85, experience: "3 years" },
+        { name: "Bitbucket", level: 80, experience: "2 years" },
+        { name: "Figma", level: 85, experience: "3 years" },
+        { name: "Crashlytics", level: 88, experience: "3 years" },
+        { name: "SonarQube", level: 75, experience: "2 years" }
+      ]
+    },
+    {
+      category: "Specialized Skills",
+      icon: "🎯",
+      color: "#ff9800",
+      skills: [
+        { name: "Mapbox Integration", level: 85, experience: "2 years" },
+        { name: "Performance Optimization", level: 88, experience: "3 years" },
+        { name: "CI/CD", level: 80, experience: "2 years" },
+        { name: "Agile Development", level: 90, experience: "4 years" },
+        { name: "Code Review", level: 85, experience: "3 years" },
+        { name: "UI/UX Design", level: 80, experience: "3 years" }
       ]
     }
   ];
@@ -53,18 +69,34 @@ function Skills() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
+        staggerChildren: 0.1,
+        delayChildren: 0.2
       }
     }
   };
 
-  const itemVariants = {
+  const categoryVariants = {
+    hidden: { opacity: 0, y: 50, scale: 0.9 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+        staggerChildren: 0.05
+      }
+    }
+  };
+
+  const skillVariants = {
     hidden: { opacity: 0, x: -20 },
     visible: { 
       opacity: 1, 
       x: 0,
       transition: {
-        duration: 0.5
+        duration: 0.4,
+        ease: "easeOut"
       }
     }
   };
@@ -78,31 +110,97 @@ function Skills() {
       viewport={{ once: true, margin: "-100px" }}
       variants={containerVariants}
     >
-      <motion.h1 className="sectionTitle" variants={itemVariants}>Skills</motion.h1>
-      <motion.div className={styles.skillsContainer} variants={containerVariants}>
-        {skillCategories.map((category, index) => (
+      <motion.div className={styles.header} variants={categoryVariants}>
+        <h1 className="sectionTitle">Technical Expertise</h1>
+        <p className={styles.subtitle}>
+          Comprehensive skill set built through 4+ years of professional development
+        </p>
+      </motion.div>
+
+      <motion.div className={styles.skillsGrid} variants={containerVariants}>
+        {skillsData.map((category, categoryIndex) => (
           <motion.div 
-            key={index} 
+            key={categoryIndex}
             className={styles.skillCategory}
-            variants={itemVariants}
+            variants={categoryVariants}
             whileHover={{ scale: 1.02 }}
           >
-            <h3 className={styles.categoryTitle}>{category.title}</h3>
-            <motion.div className={styles.skillList}>
+            <div className={styles.categoryHeader}>
+              <div 
+                className={styles.categoryIcon}
+                style={{ backgroundColor: category.color }}
+              >
+                <span className={styles.iconEmoji}>{category.icon}</span>
+              </div>
+              <h3 className={styles.categoryTitle}>{category.category}</h3>
+            </div>
+
+            <div className={styles.skillsList}>
               {category.skills.map((skill, skillIndex) => (
                 <motion.div
                   key={skillIndex}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: skillIndex * 0.05 }}
-                  viewport={{ once: true }}
+                  className={styles.skillItem}
+                  variants={skillVariants}
+                  onMouseEnter={() => setHoveredSkill(`${categoryIndex}-${skillIndex}`)}
+                  onMouseLeave={() => setHoveredSkill(null)}
+                  whileHover={{ scale: 1.05 }}
                 >
-                  <SkillList src={checkMarkIcon} skill={skill} />
+                  <div className={styles.skillHeader}>
+                    <div className={styles.skillInfo}>
+                      <span className={styles.skillName}>{skill.name}</span>
+                      <span className={styles.skillExperience}>{skill.experience}</span>
+                    </div>
+                    <div className={styles.skillLevel}>
+                      <span className={styles.levelText}>{skill.level}%</span>
+                    </div>
+                  </div>
+                  
+                  <div className={styles.skillBarContainer}>
+                    <motion.div 
+                      className={styles.skillBar}
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${skill.level}%` }}
+                      transition={{ 
+                        duration: 1.5, 
+                        delay: skillIndex * 0.1,
+                        ease: "easeOut"
+                      }}
+                      viewport={{ once: true }}
+                      style={{ backgroundColor: category.color }}
+                    >
+                      <div className={styles.skillBarGlow} />
+                    </motion.div>
+                  </div>
                 </motion.div>
               ))}
-            </motion.div>
+            </div>
           </motion.div>
         ))}
+      </motion.div>
+
+      <motion.div 
+        className={styles.statsSection}
+        variants={categoryVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <div className={styles.statCard}>
+          <div className={styles.statNumber}>4+</div>
+          <div className={styles.statLabel}>Years Experience</div>
+        </div>
+        <div className={styles.statCard}>
+          <div className={styles.statNumber}>8</div>
+          <div className={styles.statLabel}>Live Projects</div>
+        </div>
+        <div className={styles.statCard}>
+          <div className={styles.statNumber}>20+</div>
+          <div className={styles.statLabel}>Tech Stack</div>
+        </div>
+        <div className={styles.statCard}>
+          <div className={styles.statNumber}>100%</div>
+          <div className={styles.statLabel}>Success Rate</div>
+        </div>
       </motion.div>
     </motion.section>
   );

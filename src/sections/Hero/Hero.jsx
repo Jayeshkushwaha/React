@@ -8,12 +8,15 @@ import emailDark from '../../assets/email-dark.svg';
 import linkedinLight from '../../assets/linkedin-light.svg';
 import linkedinDark from '../../assets/linkedin-dark.svg';
 import CV from '../../assets/cv.pdf';
+import profileImage from '../../assets/Design uten navn.webp';
 import { useTheme } from '../../common/ThemeContext';
 import { motion } from 'framer-motion';
 import TypewriterText from '../../components/TypewriterText';
+import { useState } from 'react';
 
 function Hero() {
   const { theme, toggleTheme } = useTheme();
+  const [imageError, setImageError] = useState(false);
 
   const themeIcon = theme === 'light' ? sun : moon;
   const githubIcon = theme === 'light' ? githubLight : githubDark;
@@ -68,7 +71,7 @@ function Hero() {
     >
       <motion.div className={styles.colorModeContainer} variants={itemVariants}>
         <motion.img
-          src="https://lh3.googleusercontent.com/a/ACg8ocJ6BrEzfY-bipXkHldIDhsiZaMZ3YGDoIZ-6Pu6wnTTGdGsZeCW=s576-c-no"
+          src={imageError ? `https://ui-avatars.com/api/?name=Jayesh+Kushwaha&size=400&background=0987f2&color=fff&bold=true&font-size=0.4` : profileImage}
           className={styles.hero}
           alt="Jayesh Kushwaha, React Native Developer"
           loading="eager"
@@ -79,6 +82,7 @@ function Hero() {
           variants={imageVariants}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          onError={() => setImageError(true)}
         />
         <div className={styles.themeIconContainer}>
           <img

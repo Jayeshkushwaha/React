@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styles from './FooterStyles.module.css';
 import githubLight from '../../assets/github-light.svg';
 import githubDark from '../../assets/github-dark.svg';
@@ -10,24 +10,10 @@ import { useTheme } from '../../common/ThemeContext';
 
 function Footer() {
   const { theme } = useTheme();
-  const [showBackToTop, setShowBackToTop] = useState(false);
 
   const githubIcon = theme === 'light' ? githubLight : githubDark;
   const emailIcon = theme === 'light' ? emailLight : emailDark;
   const linkedinIcon = theme === 'light' ? linkedinLight : linkedinDark;
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowBackToTop(window.pageYOffset > 300);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
   return (
     <footer id="footer" className={styles.container}>
@@ -86,12 +72,6 @@ function Footer() {
           Made with <span className={styles.heart}>❤</span> using React
         </p>
       </div>
-
-      <button 
-        className={`${styles.backToTop} ${showBackToTop ? styles.visible : ''}`}
-        onClick={scrollToTop}
-        aria-label="Back to top"
-      />
     </footer>
   );
 }

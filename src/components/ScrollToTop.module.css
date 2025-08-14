@@ -2,47 +2,143 @@
   position: fixed;
   bottom: 30px;
   right: 30px;
-  width: 50px;
-  height: 50px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
-  background: var(--gradient-primary);
+  background: transparent;
   color: white;
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow-lg);
-  transition: all 0.3s var(--transition-ease);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1000;
-  animation: fadeInUp 0.3s ease-out;
+  animation: fadeInUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+  overflow: visible;
+}
+
+.progressRing {
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  opacity: 0.3;
+}
+
+.innerButton {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(9, 135, 242, 0.3);
+}
+
+.innerButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.scrollToTop:hover .innerButton::before {
+  opacity: 1;
+}
+
+.arrow {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
 }
 
 .scrollToTop:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-xl);
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 8px 30px rgba(9, 135, 242, 0.4);
+}
+
+.scrollToTop:hover .arrow {
+  transform: translateY(-3px);
+}
+
+.scrollToTop:hover .progressRing {
+  opacity: 0.6;
+  transform: rotate(90deg);
 }
 
 .scrollToTop:active {
-  transform: translateY(-2px);
+  transform: translateY(-4px) scale(1.02);
+  transition: transform 0.1s;
+}
+
+.scrollToTop:active .arrow {
+  transform: translateY(-1px);
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px) scale(0.8);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 4px 20px rgba(9, 135, 242, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 25px rgba(9, 135, 242, 0.5);
+  }
+}
+
+.scrollToTop:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(9, 135, 242, 0.2), 0 4px 20px rgba(9, 135, 242, 0.3);
+}
+
+.scrollToTop:focus-visible {
+  outline: 2px solid var(--btn-color);
+  outline-offset: 3px;
 }
 
 @media (max-width: 768px) {
   .scrollToTop {
     bottom: 20px;
     right: 20px;
-    width: 45px;
-    height: 45px;
+    width: 48px;
+    height: 48px;
+  }
+  
+  .arrow {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scrollToTop,
+  .arrow,
+  .progressRing,
+  .innerButton::before {
+    animation: none;
+    transition: none;
+  }
+  
+  .scrollToTop:hover {
+    transform: translateY(-4px);
   }
 }

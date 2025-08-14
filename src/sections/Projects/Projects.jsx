@@ -4,6 +4,7 @@ import hipsster from '../../assets/hipsster.png';
 import fitLift from '../../assets/fitlift.png';
 import driver from '../../assets/driver.png';
 import pos from '../../assets/pos.png';
+import poleasyLogo from '../../assets/poleasy_logo.png';
 import ProjectCard from '../../common/ProjectCard';
 
 function Projects() {
@@ -16,7 +17,7 @@ function Projects() {
       tags: ["React Native", "E-commerce", "Cursor AI", "Claude Code"]
     },
     {
-      src: "https://media.licdn.com/dms/image/v2/D560BAQFvq7qqylg7tg/company-logo_200_200/B56ZUDlP1_HQAM-/0/1739521851285/xtraplayersports_logo?e=1755129600&v=beta&t=Une8b5DPzAomvSEsFEGQ3Ppukn7mVCQlTL2xbsUdlPw",
+      src: "https://cdn-icons-png.flaticon.com/512/1099/1099680.png",
       link: "https://www.xtraplayer.com/",
       h3: "Xtraplayer",
       p: "Cricket scoring app with real-time tracking, WebSocket integration for live updates, comprehensive extras management (wides, no-balls).",
@@ -58,7 +59,7 @@ function Projects() {
       tags: ["Safety", "IoT", "Emergency", "React Native"]
     },
     {
-      src: "https://media.licdn.com/dms/image/v2/D560BAQHTw2JD_FhB8g/company-logo_200_200/company-logo_200_200/0/1719568602975/poleasy_logo?e=1755129600&v=beta&t=q4XeShmlt5d0hyjkj1SLyRYuz9V11JAfv3sReeJWqKU",
+      src: poleasyLogo,
       link: "https://www.mypoleasy.com/",
       h3: "PolEasy",
       p: "Insurance platform streamlining policy management, quote generation, and claims handling via personalized dashboard.",

@@ -2,6 +2,7 @@ import './App.css';
 import { lazy, Suspense } from 'react';
 import Hero from './sections/Hero/Hero';
 import AnimatedBackground from './components/AnimatedBackground';
+import ParticlesBackground from './components/ParticlesBackground';
 import ScrollToTop from './components/ScrollToTop';
 import ErrorBoundary from './components/ErrorBoundary';
 
@@ -32,6 +33,7 @@ function App() {
   return (
     <ErrorBoundary>
       <AnimatedBackground />
+      <ParticlesBackground />
       <ScrollToTop />
       <Hero />
       <Suspense fallback={<LoadingFallback />}>
