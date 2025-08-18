@@ -15,11 +15,11 @@
 
 .projectCard {
   background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-radius: var(--border-radius-lg);
   overflow: hidden;
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+  box-shadow: var(--shadow-card);
   border: 1px solid var(--glass-border);
   transition: all var(--transition-duration) var(--transition-ease);
   position: relative;
@@ -28,6 +28,7 @@
   height: 100%;
   transform-style: preserve-3d;
   backface-visibility: hidden;
+  isolation: isolate;
 }
 
 .projectCard::before {
@@ -85,28 +86,30 @@
 }
 
 .projectCard:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 12px 40px rgba(9, 135, 242, 0.2);
-  border-color: rgba(9, 135, 242, 0.3);
-  background: rgba(255, 255, 255, 0.85);
+  transform: translateY(-12px) scale(1.03) rotateX(2deg);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(94, 114, 228, 0.4);
+  background: rgba(255, 255, 255, 0.95);
 }
 
 [data-theme='dark'] .projectCard:hover {
-  background: rgba(40, 40, 40, 0.85);
-  border-color: rgba(77, 171, 247, 0.3);
+  background: rgba(22, 27, 34, 0.95);
+  border-color: rgba(88, 166, 255, 0.4);
+  box-shadow: var(--shadow-hover);
 }
 
 .projectCard img {
   width: 100%;
   height: 240px;
   object-fit: cover;
-  transition: all 0.5s var(--transition-ease);
+  transition: all 0.6s var(--transition-ease);
   position: relative;
+  filter: brightness(0.95) saturate(1.1);
 }
 
 .projectCard:hover img {
-  transform: scale(1.1);
-  filter: brightness(1.1) saturate(1.2);
+  transform: scale(1.15) rotate(1deg);
+  filter: brightness(1.05) saturate(1.3) contrast(1.1);
 }
 
 .skeletonImage {
@@ -161,15 +164,16 @@
 }
 
 .tag {
-  padding: 4px 12px;
-  background: rgba(9, 135, 242, 0.1);
+  padding: 6px 14px;
+  background: linear-gradient(135deg, rgba(94, 114, 228, 0.1), rgba(94, 114, 228, 0.05));
   color: var(--btn-color);
-  border-radius: var(--border-radius-sm);
+  border-radius: 20px;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.025em;
   transition: all var(--transition-duration) ease;
-  border: 1px solid transparent;
+  border: 1px solid rgba(94, 114, 228, 0.2);
+  backdrop-filter: blur(10px);
 }
 
 .tag:hover {
@@ -196,14 +200,15 @@
   text-align: center;
   text-decoration: none;
   border-radius: var(--border-radius);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.875rem;
   transition: all var(--transition-duration) var(--transition-ease);
   position: relative;
   overflow: hidden;
   text-transform: uppercase;
-  letter-spacing: 0.025em;
-  box-shadow: 0 2px 8px rgba(9, 135, 242, 0.2);
+  letter-spacing: 0.5px;
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(10px);
 }
 
 .projectLink::before {
