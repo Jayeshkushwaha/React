@@ -3,372 +3,142 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  position: relative;
-  padding: var(--spacing-3xl) var(--spacing-lg);
-  background: linear-gradient(135deg, 
-    rgba(9, 135, 242, 0.02) 0%, 
-    transparent 50%, 
-    rgba(0, 212, 255, 0.02) 100%);
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .header {
-  margin-bottom: var(--spacing-3xl);
+  margin-bottom: 50px;
   max-width: 600px;
 }
 
 .subtitle {
-  font-size: 1.125rem;
+  font-size: 1.1rem;
   color: var(--text-secondary);
   line-height: 1.7;
-  margin: var(--spacing-lg) auto 0;
+  margin: 20px auto 0;
   max-width: 500px;
-  font-weight: 400;
 }
 
 .skillsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: var(--spacing-2xl);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
   width: 100%;
-  max-width: 1200px;
-  margin-bottom: var(--spacing-3xl);
+  margin-bottom: 50px;
 }
 
 .skillCategory {
-  background: var(--glass-bg);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  background: var(--surface-color);
   border-radius: var(--border-radius-xl);
-  padding: var(--spacing-2xl);
+  padding: 30px;
   box-shadow: var(--shadow-card);
-  border: 1px solid var(--glass-border);
-  position: relative;
-  overflow: hidden;
-  transition: all 0.5s var(--transition-ease);
-  transform-style: preserve-3d;
-}
-
-.skillCategory::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, 
-    var(--btn-color), 
-    var(--accent-color), 
-    var(--btn-color));
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.skillCategory:hover::before {
-  opacity: 1;
+  border: 1px solid var(--card-border);
+  transition: all var(--transition-duration) var(--transition-ease);
+  text-align: left;
 }
 
 .skillCategory:hover {
-  transform: translateY(-10px) scale(1.02) rotateX(5deg);
+  transform: translateY(-5px);
   box-shadow: var(--shadow-hover);
-  border-color: rgba(94, 114, 228, 0.4);
-  background: rgba(255, 255, 255, 0.98);
-}
-
-[data-theme='dark'] .skillCategory:hover {
-  background: rgba(22, 27, 34, 0.98);
-  border-color: rgba(88, 166, 255, 0.4);
-  box-shadow: var(--shadow-hover);
-}
-
-.categoryHeader {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-md);
-  margin-bottom: var(--spacing-xl);
-  padding-bottom: var(--spacing-lg);
-  border-bottom: 1px solid var(--glass-border);
-}
-
-.categoryIcon {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--border-radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  position: relative;
-  overflow: hidden;
-  transition: all 0.4s var(--transition-ease);
-}
-
-.categoryIcon::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, 
-    rgba(255, 255, 255, 0.2) 0%, 
-    transparent 100%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.skillCategory:hover .categoryIcon::before {
-  opacity: 1;
-}
-
-.skillCategory:hover .categoryIcon {
-  transform: scale(1.1) rotate(5deg);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-}
-
-.iconEmoji {
-  font-size: 1.5rem;
-  position: relative;
-  z-index: 1;
 }
 
 .categoryTitle {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.4rem;
+  font-weight: 600;
   color: var(--text-color);
-  margin: 0;
-  letter-spacing: -0.02em;
-  position: relative;
+  margin: 0 0 20px 0;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--card-border);
 }
 
-.skillsList {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-lg);
+.skillList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .skillItem {
-  background: linear-gradient(135deg, rgba(94, 114, 228, 0.03), rgba(94, 114, 228, 0.01));
-  border-radius: var(--border-radius-lg);
-  padding: var(--spacing-lg);
-  transition: all 0.4s var(--transition-ease);
-  border: 1px solid rgba(94, 114, 228, 0.1);
-  position: relative;
-  overflow: hidden;
-  backdrop-filter: blur(5px);
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.skillItem::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, 
-    transparent, 
-    rgba(9, 135, 242, 0.05), 
-    transparent);
-  transition: left 0.6s ease;
-}
-
-.skillItem:hover::before {
-  left: 100%;
-}
-
-.skillItem:hover {
-  background: linear-gradient(135deg, rgba(94, 114, 228, 0.1), rgba(94, 114, 228, 0.05));
-  border-color: rgba(94, 114, 228, 0.4);
-  transform: translateX(8px) scale(1.02);
-  box-shadow: var(--shadow-sm);
-}
-
-.skillHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: var(--spacing-md);
-}
-
-.skillInfo {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--spacing-xs);
+.skillItem:last-child {
+  border-bottom: none;
 }
 
 .skillName {
   font-size: 1rem;
-  font-weight: 600;
   color: var(--text-color);
-  letter-spacing: -0.01em;
-}
-
-.skillExperience {
-  font-size: 0.75rem;
-  color: var(--text-secondary);
-  font-weight: 500;
-  background: rgba(9, 135, 242, 0.1);
-  padding: 2px 8px;
-  border-radius: var(--border-radius-sm);
-}
-
-.skillLevel {
   display: flex;
   align-items: center;
 }
 
-.levelText {
-  font-size: 0.875rem;
-  font-weight: 700;
+.skillName::before {
+  content: "•";
   color: var(--btn-color);
-  background: rgba(9, 135, 242, 0.1);
-  padding: 4px 8px;
-  border-radius: var(--border-radius-sm);
-  min-width: 45px;
-  text-align: center;
-}
-
-.skillBarContainer {
-  width: 100%;
-  height: 8px;
-  background: var(--surface-color);
-  border-radius: var(--border-radius-sm);
-  overflow: hidden;
-  position: relative;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.skillBar {
-  height: 100%;
-  border-radius: var(--border-radius-sm);
-  position: relative;
-  transition: all 0.3s ease;
-  background: linear-gradient(90deg, 
-    currentColor 0%, 
-    currentColor 100%);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-.skillBarGlow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, 
-    transparent 0%, 
-    rgba(255, 255, 255, 0.4) 50%, 
-    transparent 100%);
-  animation: skillBarShimmer 2s infinite;
-}
-
-@keyframes skillBarShimmer {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-right: 10px;
 }
 
 /* Stats Section */
 .statsSection {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: var(--spacing-2xl);
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
   width: 100%;
   max-width: 800px;
-  margin-top: var(--spacing-3xl);
-  padding: 0 var(--spacing-md);
+  margin-top: 50px;
+  padding: 0 15px;
 }
 
 .statCard {
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: var(--surface-color);
   border-radius: var(--border-radius-xl);
-  padding: var(--spacing-2xl) var(--spacing-xl);
+  padding: 25px 15px;
   text-align: center;
-  border: 1px solid var(--glass-border);
-  transition: all 0.4s var(--transition-ease);
-  position: relative;
-  overflow: hidden;
-  min-height: 140px;
+  border: 1px solid var(--card-border);
+  transition: all var(--transition-duration) var(--transition-ease);
+  min-height: 120px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.statCard::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(45deg, 
-    transparent,
-    rgba(9, 135, 242, 0.1),
-    transparent);
-  transform: rotate(45deg);
-  transition: all 0.6s;
-  opacity: 0;
-}
-
-.statCard:hover::before {
-  animation: shimmerCard 0.6s ease;
-}
-
 .statCard:hover {
-  transform: translateY(-8px) scale(1.06) rotateY(5deg);
+  transform: translateY(-5px);
   box-shadow: var(--shadow-hover);
-  border-color: rgba(94, 114, 228, 0.4);
-  background: rgba(255, 255, 255, 0.95);
 }
 
 .statNumber {
-  font-size: 2.8rem;
-  font-weight: 800;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--btn-color);
+  margin-bottom: 10px;
   line-height: 1.2;
-  margin-bottom: var(--spacing-md);
-  position: relative;
-  z-index: 1;
-  white-space: nowrap;
-  overflow: visible;
-  letter-spacing: -0.02em;
 }
 
 .statLabel {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--text-secondary);
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  position: relative;
-  z-index: 1;
+  letter-spacing: 0.05em;
   line-height: 1.4;
 }
 
 /* Responsive Design */
 @media (width >= 768px) {
-  .skillsGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-3xl);
-  }
-}
-
-@media (width >= 1024px) {
   .container {
-    padding: var(--spacing-3xl) var(--spacing-2xl);
+    padding: 60px 40px;
   }
   
   .skillsGrid {
-    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
   }
   
   .statsSection {
@@ -377,22 +147,19 @@
   }
   
   .statNumber {
-    font-size: 3.2rem;
+    font-size: 2.5rem;
   }
-  
-  .statCard {
-    min-height: 160px;
-    padding: var(--spacing-2xl);
+}
+
+@media (width >= 1024px) {
+  .skillsGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (width >= 1200px) {
   .skillsGrid {
-    gap: var(--spacing-3xl);
-  }
-  
-  .skillCategory {
-    padding: var(--spacing-3xl);
+    gap: 50px;
   }
 }
 
@@ -463,20 +230,6 @@
   }
   100% {
     background-position: 200% 0;
-  }
-}
-
-@keyframes shimmerCard {
-  0% {
-    transform: translateX(-100%) translateY(-100%) rotate(45deg);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(100%) translateY(100%) rotate(45deg);
-    opacity: 0;
   }
 }
 

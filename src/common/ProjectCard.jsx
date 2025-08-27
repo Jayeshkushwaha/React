@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styles from '../sections/Projects/ProjectsStyles.module.css';
-import { motion } from 'framer-motion';
 
 function ProjectCard({ src, link, h3, p, github, demo, tags = [] }) {
   const [imageLoading, setImageLoading] = useState(true);
@@ -16,16 +15,9 @@ function ProjectCard({ src, link, h3, p, github, demo, tags = [] }) {
   };
 
   return (
-    <motion.article 
-      className={styles.projectCard}
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
-      whileHover={{ y: -10 }}
-    >
+    <article className={styles.projectCard}>
       <a href={link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
-        <div style={{ position: 'relative', overflow: 'hidden', minHeight: '240px' }}>
+        <div style={{ position: 'relative', overflow: 'hidden', minHeight: '200px' }}>
           {imageLoading && !imageError && (
             <div className={styles.skeletonImage} style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }} />
           )}
@@ -38,7 +30,7 @@ function ProjectCard({ src, link, h3, p, github, demo, tags = [] }) {
               style={{ 
                 display: 'block',
                 width: '100%',
-                height: '240px',
+                height: '200px',
                 objectFit: 'cover',
                 opacity: imageLoading ? 0 : 1,
                 transition: 'opacity 0.3s ease'
@@ -48,7 +40,7 @@ function ProjectCard({ src, link, h3, p, github, demo, tags = [] }) {
           )}
           {imageError && (
             <div style={{ 
-              height: '240px', 
+              height: '200px', 
               background: 'var(--surface-color)', 
               display: 'flex', 
               alignItems: 'center', 
@@ -97,7 +89,7 @@ function ProjectCard({ src, link, h3, p, github, demo, tags = [] }) {
           )}
         </div>
       )}
-    </motion.article>
+    </article>
   );
 }
 

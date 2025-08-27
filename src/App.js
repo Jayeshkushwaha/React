@@ -1,8 +1,6 @@
 import './App.css';
 import { lazy, Suspense } from 'react';
 import Hero from './sections/Hero/Hero';
-import AnimatedBackground from './components/AnimatedBackground';
-import ParticlesBackground from './components/ParticlesBackground';
 import ScrollToTop from './components/ScrollToTop';
 import ErrorBoundary from './components/ErrorBoundary';
 
@@ -17,23 +15,13 @@ const LoadingFallback = () => (
     textAlign: 'center', 
     color: 'var(--text-secondary)' 
   }}>
-    <div style={{
-      width: '40px',
-      height: '40px',
-      border: '3px solid var(--surface-color)',
-      borderTop: '3px solid var(--btn-color)',
-      borderRadius: '50%',
-      margin: '0 auto',
-      animation: 'spin 1s linear infinite'
-    }} />
+    Loading...
   </div>
 );
 
 function App() {
   return (
     <ErrorBoundary>
-      <AnimatedBackground />
-      <ParticlesBackground />
       <ScrollToTop />
       <Hero />
       <Suspense fallback={<LoadingFallback />}>

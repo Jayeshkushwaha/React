@@ -2,150 +2,58 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  position: relative;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .projectsContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: var(--spacing-xl);
-  padding: var(--spacing-md);
-  animation: fadeInUp 0.8s var(--animation-smooth) both;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
 }
 
 .projectCard {
-  background: var(--glass-bg);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  background: var(--surface-color);
   border-radius: var(--border-radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-card);
-  border: 1px solid var(--glass-border);
+  border: 1px solid var(--card-border);
   transition: all var(--transition-duration) var(--transition-ease);
-  position: relative;
   display: flex;
   flex-direction: column;
   height: 100%;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-  isolation: isolate;
-}
-
-.projectCard::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--gradient-accent);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform var(--transition-duration) var(--transition-ease);
-  z-index: 10;
-}
-
-.projectCard::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    45deg,
-    transparent,
-    rgba(255, 255, 255, 0.1),
-    transparent
-  );
-  transform: rotate(45deg);
-  transition: all 0.6s;
-  opacity: 0;
-}
-
-.projectCard:hover::before {
-  transform: scaleX(1);
-}
-
-.projectCard:hover::after {
-  animation: shimmerCard 0.6s ease;
-}
-
-@keyframes shimmerCard {
-  0% {
-    transform: translateX(-100%) translateY(-100%) rotate(45deg);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(100%) translateY(100%) rotate(45deg);
-    opacity: 0;
-  }
 }
 
 .projectCard:hover {
-  transform: translateY(-12px) scale(1.03) rotateX(2deg);
-  box-shadow: var(--shadow-hover);
-  border-color: rgba(94, 114, 228, 0.4);
-  background: rgba(255, 255, 255, 0.95);
-}
-
-[data-theme='dark'] .projectCard:hover {
-  background: rgba(22, 27, 34, 0.95);
-  border-color: rgba(88, 166, 255, 0.4);
+  transform: translateY(-5px);
   box-shadow: var(--shadow-hover);
 }
 
 .projectCard img {
   width: 100%;
-  height: 240px;
+  height: 200px;
   object-fit: cover;
-  transition: all 0.6s var(--transition-ease);
-  position: relative;
-  filter: brightness(0.95) saturate(1.1);
-}
-
-.projectCard:hover img {
-  transform: scale(1.15) rotate(1deg);
-  filter: brightness(1.05) saturate(1.3) contrast(1.1);
 }
 
 .skeletonImage {
-  background: linear-gradient(90deg, 
-    var(--surface-color) 0%, 
-    rgba(9, 135, 242, 0.1) 50%, 
-    var(--surface-color) 100%);
-  background-size: 1000px 100%;
-  animation: shimmer 2s infinite;
-  border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+  background: var(--surface-color);
+  height: 200px;
 }
 
 .projectContent {
-  padding: var(--spacing-lg);
+  padding: 20px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-sm);
-  position: relative;
-  z-index: 1;
+  gap: 10px;
 }
 
 .projectCard h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: 1.3rem;
+  font-weight: 600;
   color: var(--text-color);
-  margin: 0 0 var(--spacing-sm) 0;
-  letter-spacing: -0.02em;
-  transition: color var(--transition-duration) ease;
-}
-
-.projectCard:hover h3 {
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  margin: 0;
 }
 
 .projectCard p {
@@ -153,177 +61,58 @@
   line-height: 1.6;
   flex-grow: 1;
   margin: 0;
-  transition: color var(--transition-duration) ease;
 }
 
 .projectTags {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-xs);
-  margin-top: var(--spacing-sm);
+  gap: 8px;
+  margin-top: 10px;
 }
 
 .tag {
-  padding: 6px 14px;
-  background: linear-gradient(135deg, rgba(94, 114, 228, 0.1), rgba(94, 114, 228, 0.05));
+  padding: 6px 12px;
+  background: rgba(94, 114, 228, 0.1);
   color: var(--btn-color);
   border-radius: 20px;
   font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.025em;
-  transition: all var(--transition-duration) ease;
-  border: 1px solid rgba(94, 114, 228, 0.2);
-  backdrop-filter: blur(10px);
-}
-
-.tag:hover {
-  background: rgba(9, 135, 242, 0.2);
-  border-color: var(--btn-color);
-  transform: translateY(-2px);
+  font-weight: 500;
 }
 
 .projectLinks {
   display: flex;
-  gap: var(--spacing-sm);
-  padding: var(--spacing-md);
+  gap: 10px;
+  padding: 20px;
   background: var(--surface-color);
   border-top: 1px solid var(--card-border);
-  position: relative;
-  z-index: 2;
 }
 
 .projectLink {
   flex: 1;
-  padding: var(--spacing-sm) var(--spacing-md);
+  padding: 10px;
   background: var(--gradient-primary);
   color: white;
   text-align: center;
   text-decoration: none;
   border-radius: var(--border-radius);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.875rem;
   transition: all var(--transition-duration) var(--transition-ease);
-  position: relative;
-  overflow: hidden;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  box-shadow: var(--shadow-sm);
-  backdrop-filter: blur(10px);
-}
-
-.projectLink::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
-  transform: translate(-50%, -50%);
-  transition: width 0.6s, height 0.6s;
-}
-
-.projectLink:hover::before {
-  width: 300px;
-  height: 300px;
 }
 
 .projectLink:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(9, 135, 242, 0.3);
-  filter: brightness(1.1);
-}
-
-.projectLink:active {
-  transform: translateY(0);
-  box-shadow: 0 1px 4px rgba(9, 135, 242, 0.2);
-}
-
-/* Staggered animation for cards */
-.projectsContainer > *:nth-child(1) { animation-delay: 0.1s; }
-.projectsContainer > *:nth-child(2) { animation-delay: 0.2s; }
-.projectsContainer > *:nth-child(3) { animation-delay: 0.3s; }
-.projectsContainer > *:nth-child(4) { animation-delay: 0.4s; }
-.projectsContainer > *:nth-child(5) { animation-delay: 0.5s; }
-.projectsContainer > *:nth-child(6) { animation-delay: 0.6s; }
-
-/* Filter buttons */
-.filterContainer {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: var(--spacing-sm);
-  margin-bottom: var(--spacing-xl);
-  padding: 0 var(--spacing-md);
-}
-
-.filterButton {
-  padding: var(--spacing-sm) var(--spacing-lg);
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--border-radius);
-  color: var(--text-secondary);
-  font-weight: 600;
-  font-size: 0.875rem;
-  cursor: pointer;
-  transition: all var(--transition-duration) var(--transition-ease);
-  text-transform: uppercase;
-  letter-spacing: 0.025em;
-}
-
-.filterButton:hover {
-  background: rgba(9, 135, 242, 0.1);
-  border-color: var(--btn-color);
-  color: var(--btn-color);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(9, 135, 242, 0.2);
-}
-
-.filterButton.active {
-  background: var(--gradient-primary);
-  color: white;
-  border-color: transparent;
-  box-shadow: 0 4px 12px rgba(9, 135, 242, 0.3);
-}
-
-/* Loading skeleton */
-.skeleton {
-  background: linear-gradient(90deg, 
-    var(--card-bg) 0%, 
-    rgba(9, 135, 242, 0.1) 50%, 
-    var(--card-bg) 100%);
-  background-size: 1000px 100%;
-  animation: shimmer 2s infinite;
-  border-radius: var(--border-radius);
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -1000px 0;
-  }
-  100% {
-    background-position: 1000px 0;
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* Responsive design */
-@media (width >= 800px) {
+@media (width >= 768px) {
+  .container {
+    padding: 60px 40px;
+  }
+  
   .projectsContainer {
-    gap: var(--spacing-2xl);
-    padding: var(--spacing-xl);
+    gap: 40px;
   }
   
   .projectCard h3 {
