@@ -57,7 +57,7 @@ function Hero() {
         </h2>
         <p className={styles.availability}>Available for opportunities</p>
         <p className={styles.description}>
-          Experienced React Native Developer with 4+ years of expertise in building scalable mobile applications. Successfully delivered 8 live projects.
+          Experienced React Native Developer with 3.6+ years of expertise in building scalable mobile applications. Successfully delivered 8 live projects.
         </p>
         <div className={styles.actions}>
           <a 
