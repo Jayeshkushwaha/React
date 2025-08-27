@@ -11,7 +11,7 @@ function Projects() {
   const projectsData = [
     {
       src: "https://cdn-icons-png.flaticon.com/512/3698/3698293.png",
-      link: "#",
+      link: "https://play.google.com/store/apps/details?id=com.athena.driver",
       h3: "Athena Flowers",
       p: "E-commerce app for Saudi florist with natural, dried & artificial flowers. Features same-day delivery, gift wrapping, online/offline integration.",
       tags: ["React Native", "E-commerce", "Cursor AI", "Claude Code"]
@@ -32,28 +32,28 @@ function Projects() {
     },
     {
       src: pos,
-      link: "https://play.google.com/store/apps/details?id=com.yelowsoft.pos&hl=en_US",
+      link: "https://play.google.com/store/apps/details?id=com.yelowsoft.pos",
       h3: "Yelowsoft POS",
       p: "Solo-developed point-of-sale for food industry with complete stock management, order processing, and cart functionality from scratch.",
       tags: ["POS", "Solo Project", "TypeScript", "Stock Management"]
     },
     {
       src: fitLift,
-      link: "https://play.google.com/store/apps/details?id=com.yelowsoft.user&hl=en_US",
+      link: "https://play.google.com/store/apps/details?id=com.yelowsoft.user",
       h3: "Yelowsoft User",
       p: "Food delivery and taxi booking app with real-time updates, seamless journey tracking, and convenient multi-cuisine ordering.",
       tags: ["Food Delivery", "Taxi Booking", "Real-time", "Redux"]
     },
     {
       src: driver,
-      link: "https://play.google.com/store/apps/details?id=com.yelowsoft.driver&hl=en",
+      link: "https://play.google.com/store/apps/details?id=com.yelowsoft.driver",
       h3: "Yelowsoft Driver",
       p: "Ride-hailing driver app streamlining communication, navigation, payment processing with data insights to maximize earnings.",
       tags: ["Driver App", "Navigation", "Payment", "React Native"]
     },
     {
       src: hipsster,
-      link: "https://play.google.com/store/apps/details?id=nl.secure2go.addressregapp&hl=en_US",
+      link: "https://play.google.com/store/apps/details?id=nl.secure2go.addressregapp",
       h3: "Secure2Go",
       p: "Safety app for workers in hazardous environments with personal alarm system and automatic man-down detection.",
       tags: ["Safety", "IoT", "Emergency", "React Native"]
