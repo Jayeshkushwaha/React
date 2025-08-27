@@ -18,7 +18,7 @@ function Projects() {
     },
     {
       src: "https://cdn-icons-png.flaticon.com/512/1099/1099680.png",
-      link: "https://www.xtraplayer.com/",
+      link: "https://www.instagram.com/xtraplayerindia/",
       h3: "Xtraplayer",
       p: "Cricket scoring app with real-time tracking, WebSocket integration for live updates, comprehensive extras management (wides, no-balls).",
       tags: ["React Native", "WebSocket", "Real-time", "UI/UX"]
