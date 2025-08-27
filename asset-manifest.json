@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/React/static/css/main.462df37e.css",
-    "main.js": "/React/static/js/main.f181e5aa.js",
+    "main.js": "/React/static/js/main.7b8bc1ff.js",
     "static/css/566.ac7613b1.chunk.css": "/React/static/css/566.ac7613b1.chunk.css",
-    "static/js/566.c23c2223.chunk.js": "/React/static/js/566.c23c2223.chunk.js",
+    "static/js/566.1ce1e3bc.chunk.js": "/React/static/js/566.1ce1e3bc.chunk.js",
     "static/css/392.8bcec761.chunk.css": "/React/static/css/392.8bcec761.chunk.css",
     "static/js/392.bd58829e.chunk.js": "/React/static/js/392.bd58829e.chunk.js",
     "static/css/585.0f9c08b0.chunk.css": "/React/static/css/585.0f9c08b0.chunk.css",
@@ -26,9 +26,9 @@
     "static/media/email-light.svg": "/React/static/media/email-light.a0a672f449e61b63c8cdebeb64af8171.svg",
     "static/media/email-dark.svg": "/React/static/media/email-dark.7a4e11f19ce7df45b2bcd3c310ae763f.svg",
     "main.462df37e.css.map": "/React/static/css/main.462df37e.css.map",
-    "main.f181e5aa.js.map": "/React/static/js/main.f181e5aa.js.map",
+    "main.7b8bc1ff.js.map": "/React/static/js/main.7b8bc1ff.js.map",
     "566.ac7613b1.chunk.css.map": "/React/static/css/566.ac7613b1.chunk.css.map",
-    "566.c23c2223.chunk.js.map": "/React/static/js/566.c23c2223.chunk.js.map",
+    "566.1ce1e3bc.chunk.js.map": "/React/static/js/566.1ce1e3bc.chunk.js.map",
     "392.8bcec761.chunk.css.map": "/React/static/css/392.8bcec761.chunk.css.map",
     "392.bd58829e.chunk.js.map": "/React/static/js/392.bd58829e.chunk.js.map",
     "585.0f9c08b0.chunk.css.map": "/React/static/css/585.0f9c08b0.chunk.css.map",
@@ -38,6 +38,6 @@
   },
   "entrypoints": [
     "static/css/main.462df37e.css",
-    "static/js/main.f181e5aa.js"
+    "static/js/main.7b8bc1ff.js"
   ]
 }
