@@ -9,22 +9,23 @@
 }
 
 .header {
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   max-width: 600px;
+  padding: 0 10px;
 }
 
 .subtitle {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--text-secondary);
   line-height: 1.7;
-  margin: 20px auto 0;
+  margin: 15px auto 0;
   max-width: 500px;
 }
 
 .skillsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  grid-template-columns: 1fr;
+  gap: 20px;
   width: 100%;
   margin-bottom: 50px;
 }
@@ -32,7 +33,7 @@
 .skillCategory {
   background: var(--surface-color);
   border-radius: var(--border-radius-xl);
-  padding: 30px;
+  padding: 20px;
   box-shadow: var(--shadow-card);
   border: 1px solid var(--card-border);
   transition: all var(--transition-duration) var(--transition-ease);
@@ -60,7 +61,7 @@
 }
 
 .skillItem {
-  padding: 8px 0;
+  padding: 6px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
@@ -69,7 +70,7 @@
 }
 
 .skillName {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--text-color);
   display: flex;
   align-items: center;
@@ -81,13 +82,13 @@
   font-weight: bold;
   display: inline-block;
   width: 1em;
-  margin-right: 10px;
+  margin-right: 8px;
 }
 
 /* Stats Section */
 .statsSection {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: 1fr;
   gap: 20px;
   width: 100%;
   max-width: 800px;
@@ -132,13 +133,50 @@
 }
 
 /* Responsive Design */
+@media (width >= 576px) {
+  .skillsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+  }
+  
+  .statsSection {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .skillCategory {
+    padding: 25px;
+  }
+}
+
 @media (width >= 768px) {
   .container {
     padding: 60px 40px;
   }
   
+  .header {
+    margin-bottom: 50px;
+    padding: 0;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+    margin: 20px auto 0;
+  }
+  
   .skillsGrid {
     gap: 40px;
+  }
+  
+  .skillItem {
+    padding: 8px 0;
+  }
+  
+  .skillName {
+    font-size: 1rem;
+  }
+  
+  .skillName::before {
+    margin-right: 10px;
   }
   
   .statsSection {
@@ -148,6 +186,10 @@
   
   .statNumber {
     font-size: 2.5rem;
+  }
+  
+  .skillCategory {
+    padding: 30px;
   }
 }
 
