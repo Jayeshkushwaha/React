@@ -62,7 +62,7 @@ function Hero() {
         <div className={styles.actions}>
           <a 
             href={CV} 
-            download="Jayesh_Kushwaha_Resume.pdf"
+            download="JayeshKushwaha_ReactNative_4+YOE.pdf"
             aria-label="Download Jayesh Kushwaha's resume"
             className={styles.resumeButton}
           >
