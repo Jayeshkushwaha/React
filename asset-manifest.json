@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.462df37e.css",
-    "main.js": "/static/js/main.86172b67.js",
+    "main.js": "/static/js/main.4628de81.js",
     "static/css/154.34aab50b.chunk.css": "/static/css/154.34aab50b.chunk.css",
     "static/js/154.660b2bb1.chunk.js": "/static/js/154.660b2bb1.chunk.js",
     "static/css/392.8bcec761.chunk.css": "/static/css/392.8bcec761.chunk.css",
@@ -11,7 +11,7 @@
     "static/css/141.82a15589.chunk.css": "/static/css/141.82a15589.chunk.css",
     "static/js/141.c6a12aae.chunk.js": "/static/js/141.c6a12aae.chunk.js",
     "static/media/IMG_1711.png": "/static/media/IMG_1711.73d518ecebaa147846e2.png",
-    "static/media/cv.pdf": "/static/media/cv.9bbb6b5f897b724086c3.pdf",
+    "static/media/JayeshKushwaha_ReactNative_5YOE.pdf": "/static/media/JayeshKushwaha_ReactNative_5YOE.b5c4ce57e8e4e18adc1d.pdf",
     "static/media/pos.png": "/static/media/pos.bc373f96b3ffde2eea49.png",
     "static/media/sensitivegpt.png": "/static/media/sensitivegpt.669f55d29224e6b01120.png",
     "static/media/ai_dating.png": "/static/media/ai_dating.277f316107d2b7fdb62e.png",
@@ -34,7 +34,7 @@
     "static/media/email-light.svg": "/static/media/email-light.a0a672f449e61b63c8cdebeb64af8171.svg",
     "static/media/email-dark.svg": "/static/media/email-dark.7a4e11f19ce7df45b2bcd3c310ae763f.svg",
     "main.462df37e.css.map": "/static/css/main.462df37e.css.map",
-    "main.86172b67.js.map": "/static/js/main.86172b67.js.map",
+    "main.4628de81.js.map": "/static/js/main.4628de81.js.map",
     "154.34aab50b.chunk.css.map": "/static/css/154.34aab50b.chunk.css.map",
     "154.660b2bb1.chunk.js.map": "/static/js/154.660b2bb1.chunk.js.map",
     "392.8bcec761.chunk.css.map": "/static/css/392.8bcec761.chunk.css.map",
@@ -46,6 +46,6 @@
   },
   "entrypoints": [
     "static/css/main.462df37e.css",
-    "static/js/main.86172b67.js"
+    "static/js/main.4628de81.js"
   ]
 }
