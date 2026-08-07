@@ -7,7 +7,7 @@ import emailLight from '../../assets/email-light.svg';
 import emailDark from '../../assets/email-dark.svg';
 import linkedinLight from '../../assets/linkedin-light.svg';
 import linkedinDark from '../../assets/linkedin-dark.svg';
-import CV from '../../assets/cv.pdf';
+import CV from '../../assets/JayeshKushwaha_ReactNative_5YOE.pdf';
 import profileImage from '../../assets/IMG_1711.png';
 import { useTheme } from '../../common/ThemeContext';
 import { useState } from 'react';
@@ -62,7 +62,7 @@ function Hero() {
         <div className={styles.actions}>
           <a
             href={CV}
-            download="JayeshKushwaha_ReactNative_4+YOE.pdf"
+            download="JayeshKushwaha_ReactNative_5YOE.pdf"
             aria-label="Download Jayesh Kushwaha's resume"
             className={styles.resumeButton}
           >
