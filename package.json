@@ -2,7 +2,7 @@
   "name": "my-new-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Jayeshkushwaha.github.io/React",
+  "homepage": "https://Jayeshkushwaha.github.io/",
   "dependencies": {
     "cra-template": "1.2.0",
     "framer-motion": "^12.23.12",
