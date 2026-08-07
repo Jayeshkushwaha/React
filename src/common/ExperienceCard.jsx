@@ -12,7 +12,11 @@ function ExperienceCard({ link, h3, h2, p, skills = [] }) {
           </div>
           <h2>{h2}</h2>
         </div>
-        <p>{p}</p>
+        <ul style={{ textAlign: 'left', paddingLeft: '20px', margin: '10px 0', fontSize: '1rem', color: 'var(--text-color)' }}>
+          {p.split(/(?<=[.!?])\s+/).filter(Boolean).map((sentence, index) => (
+            <li key={index} style={{ marginBottom: '6px' }}>{sentence}</li>
+          ))}
+        </ul>
         {skills.length > 0 && (
           <div className={styles.experienceSkills}>
             {skills.map((skill, index) => (

@@ -19,9 +19,9 @@ function Footer() {
     <footer id="footer" className={styles.container}>
       <div className={styles.footerContent}>
         <div className={styles.footerInfo}>
-          <h3 style={{ 
-            fontSize: '1.5rem', 
-            fontWeight: '700', 
+          <h3 style={{
+            fontSize: '1.5rem',
+            fontWeight: '700',
             marginBottom: 'var(--spacing-md)',
             background: 'var(--gradient-primary)',
             WebkitBackgroundClip: 'text',
@@ -35,26 +35,28 @@ function Footer() {
             Let's build something amazing together!
           </p>
           <div className={styles.socialLinks}>
-            <a 
-              href="https://www.linkedin.com/in/jayesh-kushwaha/" 
-              target="_blank" 
+            <a
+              href="https://www.linkedin.com/in/jayesh-kushwaha/"
+              target="_blank"
               rel="noopener noreferrer"
               className={styles.socialLink}
               aria-label="LinkedIn"
             >
               <img src={linkedinIcon} alt="LinkedIn" />
             </a>
-            <a 
-              href="https://github.com/Jayeshkushwaha" 
-              target="_blank" 
+            <a
+              href="https://github.com/Jayeshkushwaha"
+              target="_blank"
               rel="noopener noreferrer"
               className={styles.socialLink}
               aria-label="GitHub"
             >
               <img src={githubIcon} alt="GitHub" />
             </a>
-            <a 
-              href="mailto:jayesh.kushwaha25@gmail.com" 
+            <a
+              href="mailto:jayeshkushwaha2000@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className={styles.socialLink}
               aria-label="Email"
             >
@@ -63,14 +65,14 @@ function Footer() {
           </div>
         </div>
       </div>
-      
+
       <div className={styles.copyright}>
         <p className={styles.copyrightText}>
           &copy; {new Date().getFullYear()} Jayesh Kushwaha. All rights reserved.
         </p>
-        <p className={styles.copyrightText}>
+        {/* <p className={styles.copyrightText}>
           Made with <span className={styles.heart}>❤</span> using React
-        </p>
+        </p> */}
       </div>
     </footer>
   );

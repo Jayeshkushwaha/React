@@ -4,12 +4,20 @@ import ExperienceCard from '../../common/ExperienceCard';
 function Experience() {
   const experiences = [
     {
+      link: "https://www.techugo.com/",
+      company: "techugo",
+      role: "Software Developer",
+      duration: "Nov 2025 - Present",
+      description: "Working on AI-powered mobile applications using React Native. Building scalable features, integrating APIs, and implementing real-time functionalities. Delivering high-performance production-ready apps with focus on seamless user experience. Utilizing Cursor AI and modern tooling for improved development efficiency.",
+      highlights: ["React Native", "AI-Powered Apps", "Cursor AI"]
+    },
+    {
       link: "https://www.spaceotechnologies.com/",
       company: "Space-O Technologies",
       role: "Software Engineer",
-      duration: "April 2025 - Present",
-      description: "Working on existing project originally built using lowcode/nocode platform. Enhancing the Athena Flowers e-commerce app by adding new features and bug fixes using Cursor and Claude Code to improve performance and user experience.",
-      highlights: ["E-commerce Development", "AI-Powered Development", "Performance Enhancement"]
+      duration: "Apr 2025 - Aug 2025",
+      description: "Worked on an existing project originally built using a low-code/no-code platform like Bolt ai. Enhancing the application by adding new features and bug fixes using Cursor & Claude Code to improve performance and user experience.",
+      highlights: ["Low-code/No-code", "AI-Assisted Development", "Performance Enhancement"]
     },
     {
       link: "https://www.elsner.com/",

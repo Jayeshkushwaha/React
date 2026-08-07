@@ -26,7 +26,7 @@ function Skills() {
       <div className={styles.header}>
         <h1 className="sectionTitle">Technical Expertise</h1>
         <p className={styles.subtitle}>
-          Comprehensive skill set built through 4+ years of professional development
+          Comprehensive skill set built through 5 years of professional development
         </p>
       </div>
 
@@ -44,15 +44,15 @@ function Skills() {
 
       <div className={styles.statsSection}>
         <div className={styles.statCard}>
-          <div className={styles.statNumber}>4+</div>
+          <div className={styles.statNumber}>5</div>
           <div className={styles.statLabel}>Years Experience</div>
         </div>
         <div className={styles.statCard}>
-          <div className={styles.statNumber}>8</div>
+          <div className={styles.statNumber}>13</div>
           <div className={styles.statLabel}>Live Projects</div>
         </div>
         <div className={styles.statCard}>
-          <div className={styles.statNumber}>20+</div>
+          <div className={styles.statNumber}>54</div>
           <div className={styles.statLabel}>Tech Stack</div>
         </div>
         <div className={styles.statCard}>

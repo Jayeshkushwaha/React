@@ -8,7 +8,7 @@ import emailDark from '../../assets/email-dark.svg';
 import linkedinLight from '../../assets/linkedin-light.svg';
 import linkedinDark from '../../assets/linkedin-dark.svg';
 import CV from '../../assets/cv.pdf';
-import profileImage from '../../assets/Design uten navn.webp';
+import profileImage from '../../assets/IMG_1711.png';
 import { useTheme } from '../../common/ThemeContext';
 import { useState } from 'react';
 
@@ -22,8 +22,8 @@ function Hero() {
   const linkedinIcon = theme === 'light' ? linkedinLight : linkedinDark;
 
   return (
-    <section 
-      id="hero" 
+    <section
+      id="hero"
       className={styles.container}
       role="banner"
     >
@@ -57,11 +57,11 @@ function Hero() {
         </h2>
         <p className={styles.availability}>Available for opportunities</p>
         <p className={styles.description}>
-          Experienced React Native Developer with 4+ years of expertise in building scalable mobile applications. Successfully delivered 8 live projects.
+          Experienced React Native Developer with 5 years of expertise in building scalable mobile applications. Successfully delivered 13 live projects.
         </p>
         <div className={styles.actions}>
-          <a 
-            href={CV} 
+          <a
+            href={CV}
             download="JayeshKushwaha_ReactNative_4+YOE.pdf"
             aria-label="Download Jayesh Kushwaha's resume"
             className={styles.resumeButton}
@@ -70,29 +70,29 @@ function Hero() {
               <span>Download Resume</span>
             </button>
           </a>
-          <nav 
-            className={styles.socialLinks} 
+          <nav
+            className={styles.socialLinks}
             aria-label="Social media links"
           >
-            <a 
-              href="https://www.linkedin.com/in/jayesh-kushwaha/" 
-              target="_blank" 
+            <a
+              href="https://www.linkedin.com/in/jayesh-kushwaha/"
+              target="_blank"
               rel="noopener noreferrer"
               aria-label="Visit Jayesh's LinkedIn profile"
             >
               <img src={linkedinIcon} alt="LinkedIn" aria-hidden="true" />
             </a>
-            <a 
-              href="https://github.com/Jayeshkushwaha" 
-              target="_blank" 
+            <a
+              href="https://github.com/Jayeshkushwaha"
+              target="_blank"
               rel="noopener noreferrer"
               aria-label="Visit Jayesh's GitHub profile"
             >
               <img src={githubIcon} alt="GitHub" aria-hidden="true" />
             </a>
-            <a 
-              href="mailto:jayesh.kushwaha25@gmail.com" 
-              target="_blank" 
+            <a
+              href="mailto:jayeshkushwaha2000@gmail.com"
+              target="_blank"
               rel="noopener noreferrer"
               aria-label="Send email to Jayesh"
             >

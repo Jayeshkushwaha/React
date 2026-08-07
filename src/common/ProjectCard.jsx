@@ -14,9 +14,16 @@ function ProjectCard({ src, link, h3, p, github, demo, tags = [] }) {
     setImageError(true);
   };
 
+  const handleLinkClick = (e) => {
+    if (link === "#") {
+      e.preventDefault();
+      alert("This project is coming soon!");
+    }
+  };
+
   return (
     <article className={styles.projectCard}>
-      <a href={link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+      <a href={link} target={link !== "#" ? "_blank" : undefined} rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }} onClick={handleLinkClick}>
         <div style={{ position: 'relative', overflow: 'hidden', minHeight: '200px' }}>
           {imageLoading && !imageError && (
             <div className={styles.skeletonImage} style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }} />
@@ -53,7 +60,11 @@ function ProjectCard({ src, link, h3, p, github, demo, tags = [] }) {
         </div>
         <div className={styles.projectContent}>
           <h3>{h3}</h3>
-          <p>{p}</p>
+          <ul style={{ textAlign: 'left', paddingLeft: '20px', margin: '0 0 10px 0', fontSize: '1rem', color: 'var(--text-secondary)' }}>
+            {p.split(/(?<=[.!?])\s+/).map((sentence, index) => (
+              <li key={index} style={{ marginBottom: '6px' }}>{sentence}</li>
+            ))}
+          </ul>
           {tags.length > 0 && (
             <div className={styles.projectTags}>
               {tags.map((tag, index) => (
